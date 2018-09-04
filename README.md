@@ -1,7 +1,7 @@
 # DIGHT 360, Fall 2018, BYU
 Text Processing and Analysis
 
-The [syllabus](https://learningsuite.byu.edu/view/-iEn0dQxauwU.html) and
+The [syllabus](https://learningsuite.byu.edu/view/ldbwhlSjZW4x.html) and
 assignments are on [Learning Suite](https://learningsuite.byu.edu).
 
 The textbook for the course is [Think Python](http://greenteapress.com/wp/think-python-2e/).
