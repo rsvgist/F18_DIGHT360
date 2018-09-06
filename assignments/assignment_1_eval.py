@@ -201,7 +201,7 @@ def evaluate(func, input_type='sg'):
     for k, v in pair_dict.items():
         gold = set(v)
         predicted = set(func(k))
-        if gold == predicted:
+        if gold == predicted or (gold == {''} and predicted == set()):
             print('correct:', k, '/'.join(predicted), sep='\t')
             tp += len(gold)
             correct += 1
