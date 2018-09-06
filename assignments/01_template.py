@@ -21,7 +21,7 @@ def pluralize(sg):
         plurals.append(sg[-2:] + 'a')
     else:
         plurals.append(sg + 's')
-    return [sg + 's']
+    return plurals
 
 
 if __name__ == '__main__':
