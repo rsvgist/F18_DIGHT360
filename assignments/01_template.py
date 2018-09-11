@@ -16,7 +16,7 @@ def pluralize(sg):
     """
     plurals = []
     if sg in irr_dict:
-        return[irr_dict[sg]]
+        return [irr_dict[sg]]
     elif sg.endswith('on'):
         plurals.append(sg[-2:] + 'a')
     else:
