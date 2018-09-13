@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-from assignment_1_eval import evaluate
+from assignment_01_eval import evaluate
 
 irr_dict = {'tooth': 'teeth',  # use this dictionary SPARINGLY
             'genus': 'genera'}

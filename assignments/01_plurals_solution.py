@@ -1,6 +1,6 @@
 """One POSSIBLE solution to Assignment 1."""
 
-from assignment_1_eval import evaluate
+from assignment_01_eval import evaluate
 
 no_pl_nouns = ['news', 'gymnastics', 'economics', 'mathematics', 'statistics',
                'luggage', 'baggage', 'furniture', 'information']
