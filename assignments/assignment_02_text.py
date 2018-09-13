@@ -1,5 +1,7 @@
 """The text to be searched for assignment 2."""
 
+# http://www.writersdigest.com/writing-articles/by-writing-goal/improve-my-writing/the_sentence_sleuth_nix_those_nominalizations
+
 nom_text = """A CLIENT ONCE sent me this note: “Bonnie, you do not have to
 poof.” Yes, as a copy editor I’m a magician, tightening verbose verbiage and
 coaxing sense out of vagueness. But I’ve never poofed. I have, however,
