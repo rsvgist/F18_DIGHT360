@@ -48,9 +48,9 @@ input('Press [enter] to continue')
 import requests as r
 
 joke_url = 'https://www.rd.com/jokes/halloween-jokes-for-kids/'
-headers = {'user-agent': 'Robert Reynolds (robert_reynolds@byu.edu)'}
-response = r.get(joke_url, headers=headers)
-print(response.text[:100], '....')
+h = {'user-agent': 'Robert Reynolds (robert_reynolds@byu.edu)'}
+response = r.get(joke_url, headers=h)
+print(response.text)
 print()
 
 # PRACTICE 2
@@ -84,7 +84,7 @@ for term in ['xkcd', 'smbc', 'calvin+and+hobbes']:
     comics_responses.append(r.get(google + term, headers=headers))
     time.sleep(random.uniform(1.5, 2.5))  # Let the server breathe
 for each_response in comics_responses:
-    print('Do stuff with those websites here...')
+    print(each_response.text)
 
 # NOTE!!!!! Without time.sleep(), the code above would be extremely impolite,
 # and many servers would immediately block your ip address! It sends requests as
