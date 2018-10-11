@@ -25,6 +25,7 @@ print()
 input('intro to nltk (http://www.nltk.org/book/)\n\n')
 
 import nltk
+# nltk.download('punkt')
 
 print('### Tokenizing and `Text` objects')
 raw_text = ('I\'ll bet you wish that you had come up with this sentence.'
@@ -46,7 +47,10 @@ print('''
 >>> nltk.download('book')
 ''')
 
-from nltk.book import *  # THIS IS A TERRIBLE IDIOM!!!!
+# Using * in import statements is TERRIBLE idiom, but we will do it this
+# way because that is how they wrote the examples in the NLTK book.
+# It is better to do `from nltk import book`, then refer to `book.text1`.
+from nltk.book import *  
 
 print('Text.concordance()')
 print('Concordance of "monstrous" in Moby Dick:')
