@@ -6,6 +6,7 @@ import nltk
 # nltk.download() returns True if it is (already) successfully downloaded
 assert nltk.download('averaged_perceptron_tagger')
 assert nltk.download('averaged_perceptron_tagger_ru')
+assert nltk.download('punkt')
 
 print('Part-of-speech tagging in English...')
 walking = 'Dan did the walking man while walking down the path for walking.'
