@@ -1,7 +1,5 @@
 """Template for Assignment 1."""
 
-from collections import defaultdict
-
 from assignment_01_eval import evaluate
 
 irr_dict = {'tooth': 'teeth',  # use this dictionary SPARINGLY
