@@ -90,7 +90,7 @@ toy_data = [(1,2,3,4), (1,1,1,1), (5,3,2,1), (5,5,5,5)]
 print('Full:', LRmodel_allfeats.predict(toy_data))
 print('RFE: ', rfe.predict(toy_data))
 
-print('''PRACTICE B
+print('''PRACTICE B - this is basically your hw
 
 Use RFE with the csv file you generated in assignment 8 to identify the 6 best
 features in your best-performing model.

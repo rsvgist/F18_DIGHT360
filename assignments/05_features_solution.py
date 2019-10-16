@@ -6,7 +6,7 @@ from string import punctuation as punct  # string of common punctuation chars
 
 import nltk
 
-MC_DIR = '/Users/robertreynolds/corpora/Mini-CORE/'
+MC_DIR = 'D:\\python_projects\\F18_DIGHT360\\assignments\\Mini-CORE\\'
 print(f'Exporting features from files in `{MC_DIR}`...')
 
 
@@ -83,7 +83,7 @@ with open('05_output.tsv', 'w') as out_file:
     print('Extracting features...')
     for f in glob(MC_DIR + '*.txt'):
         # show progress by printing dots and print every hundredth number
-        # print('.', end='', flush=True)
+        print('.', end='', flush=True)
         # open the file
         with open(f) as the_file:
             raw_text = clean(the_file)

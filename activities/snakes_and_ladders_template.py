@@ -20,10 +20,36 @@ SaLdic = {6: 17,
 
 
 # Make a class (object) called Player
+class Player:
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+        
 # Each player begins at position 1
+p1 = Player('p1',position = 1)
 # First player to get to 90 newlines
 
+
 # Ask for input: how many players?
+num_players = int(input('How many players are playing today?'))
 # At each player's turn, have the player press [return] to roll
+
+build players
+
+roll the dice
+
+def roll_die():
+    return random.randint(1,6)
+
+print(roll)
+
+while position < 10:
+
+
+#check dict
+
+
+
+
 # Everything else should run automatically
 # When a player reaches 90, declare the winner

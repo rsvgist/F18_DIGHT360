@@ -1,0 +1,1 @@
+punct	pro1_tr	pro2_tr	pro3_tr	pron_tr	prop_of_adj	prop_of_prep	prop_of_v	prop_of_ex	prop_of_for	prop_of_uh	genre

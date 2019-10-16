@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 import re
 
 # open a previously saved HTML file and soupify it
-with open('Healthcare_in_Canada-wikipedia.html') as healthy_file:
+with open('Healthcare_in_Canada-wikipedia.html', encoding= 'utf8') as healthy_file:
     soup = BeautifulSoup(healthy_file, 'html5lib')  # html5lib is the parser
 
 print("Let's extract all of the links on this page...")
@@ -34,6 +34,6 @@ print()
 input('Press [enter] to continue')
 
 print("Now find elements with 'poll' in the text....")
-print(soup.find_all(string=re.compile(r'\bpoll\b', re.I)))
+print(soup.find_all(string=re.compile(r'\bsingles\b', re.I)))
 print()
 input('Press [enter] to continue')

@@ -14,8 +14,10 @@ Save the driver in /usr/local/bin/ (or /usr/bin/)
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+#specify path to chrome driver on windows
+driver = webdriver.Chrome(executable_path='D:\python_projects\F18_DIGHT360\chromedriver.exe')
 
-driver = webdriver.Chrome()
+
 driver.get("http://www.python.org")  # does not wait for AJAX
 assert "Python" in driver.title
 elem = driver.find_element_by_name("q")
@@ -47,11 +49,13 @@ input('Press [return] to continue.\n\n\n')
 
 print('''PRACTICE C
 
+
 Write a script to open https://www.google.com and search for `selenium-python
 tutorial`. Print the contents of each <cite> tag.
 (see http://selenium-python.readthedocs.io/locating-elements.html)
 
 ''')
 input('Press [return] to continue.\n\n\n')
+
 
 

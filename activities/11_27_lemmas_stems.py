@@ -22,6 +22,7 @@ input('[enter] to continue\n')
 
 words = 'cat cats goose geese identified nonsensical pluralistic rock rocks leaves fairly grows'.split()
 
+
 print('Normalizing some `words`...')
 print('{:<14}{:<12}{:<12}'.format('WORD', 'STEM', 'LEMMA'))
 for w in words:

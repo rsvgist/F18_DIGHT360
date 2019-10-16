@@ -22,7 +22,8 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
 # TODO change to the location of your Mini-CORE corpus
-MC_DIR = '/home/reynoldsnlp/corpora/Mini-CORE/'
+#MC_DIR = '/home/reynoldsnlp/corpora/Mini-CORE/'
+MC_DIR = 'D:\\python_projects\\F18_DIGHT360\\assignments\\Mini-CORE\\'
 
 
 def clean(in_file):
@@ -91,8 +92,92 @@ def punct_tr(in_Text):
     return punct_count / len(in_Text)
 
 
-# TODO add feature names HERE
-feat_names = ['ttr', '1st-pro', '2nd-pro', '3rd-pro', 'punct', 'genre']
+# example done in class
+def prop_of_N(tagged):
+    """Compute proportion of tagged words whose names begins with N (noun)"""
+    # slightly faster if you use true for 1st 'tok'
+    return len([tok for tok, tag in tagged if tag.startswith('N') ]) / len(tagged) 
+
+
+# more fxns from hw 5
+
+# adjectives
+def prop_of_adj(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('J')
+        ]) / len(tagged)
+
+
+# prepositions
+def prop_of_prep(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('I')
+        ]) / len(tagged)
+
+
+# verbs
+def prop_of_v(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('V')
+        ]) / len(tagged)
+
+#build some for d, e, f, u, to?
+
+# dets
+def prop_of_det(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('D')
+        ]) / len(tagged)
+
+
+#existential there?
+
+def prop_of_ex(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('E')
+        ]) / len(tagged)
+
+# foreign words
+def prop_of_for(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('F')
+        ]) / len(tagged)
+
+# to
+def prop_of_to(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('T')
+        ]) / len(tagged)
+
+
+# uh
+def prop_of_uh(tagged):
+    return len([
+        tok for tok, tag in tagged if tag.startswith('U')
+        ]) / len(tagged)
+
+
+
+# pronouns
+def pron_tr(input_txt):
+    pron1_ct = len([
+        i for i in input_txt if re.match(r'(?:i|me|my|mine)$', i, re.I)
+        ])
+    pron2_ct = len([
+        i for i in input_txt if re.match(r'(?:ye|you(?:rs?)?)$', i, re.I)
+        ])
+    pron3_ct = len([
+        i for i in input_txt if re.match(
+            r'(?:s?he|its?|hi[ms]|hers?)$', i, re.I
+            )
+        ])
+    total_pron_ct = (pron1_ct + pron2_ct + pron3_ct)
+
+    return total_pron_ct / len(input_txt)
+
+# TODO add feature names HERE, took out pron123, punct, ttr
+feat_names = ['ttr','punct','pro1_tr','pro2_tr','pro3_tr','pron_tr', 'prop_of_N', 'prop_of_adj', 
+'prop_of_prep', 'prop_of_v', 'prop_of_det', 'prop_of_ex', 'prop_of_for', 'prop_of_to', 'prop_of_uh', 'genre']
 with open('mc_feat_names.txt', 'w') as name_file:
     name_file.write('\t'.join(feat_names))
 
@@ -102,9 +187,11 @@ with open('mc_features.csv', 'w') as out_file:
         with open(f) as the_file:
             raw_text = clean(the_file)
         tok_text = nltk.word_tokenize(raw_text)
+        tagged = nltk.pos_tag(tok_text)
         # TODO call the function HERE
-        print(ttr(tok_text), pro1_tr(tok_text), pro2_tr(tok_text),
-              pro3_tr(tok_text), punct_tr(tok_text), subcorp(f),
+        print(ttr(tok_text), punct_tr(tok_text), pro1_tr(tok_text), pro2_tr(tok_text), pro3_tr(tok_text), pron_tr(tok_text), prop_of_N(tagged),
+              prop_of_adj(tagged), prop_of_prep(tagged), prop_of_v(tagged),
+              prop_of_det(tagged), prop_of_ex(tagged), prop_of_for(tagged), prop_of_to(tagged), prop_of_uh(tagged), subcorp(f),
               sep=',', file=out_file)
     print()  # newline after progress dots
 
@@ -145,18 +232,21 @@ while grid_size ** 2 < len_names:
 dataset.plot(kind='box', subplots=True, layout=(grid_size, grid_size),
              sharex=False, sharey=False)
 fig = plt.gcf()  # get current figure
+plt.show()
 fig.savefig('boxplots.png')
 
 # histograms
 print('Drawing histograms...')
 dataset.hist()
 fig = plt.gcf()
+plt.show()
 fig.savefig('histograms.png')
 
 # scatter plot matrix
 print('Drawing scatterplot matrix...')
 scatter_matrix(dataset)
 fig = plt.gcf()
+# plt.show()
 fig.savefig('scatter_matrix.png')
 print()
 
@@ -183,12 +273,14 @@ print()
 
 print('Initializing models...')
 # Spot Check Algorithms
-models = [('LR', LogisticRegression()),
+models = [
+    # ('LR', LogisticRegression()),
           ('LDA', LinearDiscriminantAnalysis()),
           ('KNN', KNeighborsClassifier()),
           ('CART', DecisionTreeClassifier()),
           ('NB', GaussianNB()),
-          ('SVM', SVC())]
+         # ('SVM', SVC())
+          ]
 print('Training and testing each model using 10-fold cross-validation...')
 # evaluate each model in turn
 results = []
@@ -212,6 +304,7 @@ ax = fig.add_subplot(111)
 plt.boxplot(results)
 ax.set_xticklabels(names)
 fig = plt.gcf()
+plt.show()
 fig.savefig('compare_algorithms.png')
 print()
 

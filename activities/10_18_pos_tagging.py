@@ -20,9 +20,14 @@ input('[enter] to continue...')
 
 print('Part-of-speech tagging in Russian...')
 rus_sent = 'Они стали говорить о стали.'
+
+print('Они стали говорить о стали.')
 rus_tokens = nltk.word_tokenize(rus_sent)
 rus_tagged = nltk.pos_tag(rus_tokens, lang='rus')
+
+print(rus_tokens)
 print(rus_tagged)
+
 print('http://ruscorpora.ru/corpora-morph.html')
 print()
 input('[enter] to continue...')

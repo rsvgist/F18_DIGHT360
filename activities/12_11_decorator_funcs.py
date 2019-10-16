@@ -56,6 +56,28 @@ def time_waster():
 
 ''')
 
+from time import time
+
+def time_waster():
+    for i in range(1000000):
+        i = i / 7
+
+def timer(input_func):
+        def wrapper():
+                t1 = time()
+                input_func()
+                t2 = time()
+                print(f'Time it took to run the function: {t2 - t1} seconds')      
+        return wrapper
+
+new_time_waster = timer(time_waster)
+
+new_time_waster()
+
+
+
+
+
 input('Press [return] to continue.\n')
 
 

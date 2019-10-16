@@ -1,0 +1,2916 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width" />
+<meta name="msvalidate.01" content="87B78205BB25666E656DA3EB49F3FD42" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.goldderby.com/xmlrpc.php" />
+<title>
+Grammy Nominations List: All The Nominees for the 61st Grammy Awards - GoldDerby</title>
+<!-- BEGIN Amazon Apstag -->
+<script>
+	!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+	apstag.init({
+		pubID: 3157,
+		adServer: 'googletag',
+		videoAdServer: 'DFP',
+		bidTimeout: 2e3
+	});
+</script>
+<!-- End Amazon Apstag -->
+
+<!-- Begin Quantcast Tag, Part 1 -->
+<script type="text/javascript">
+	var _qevents = _qevents || [];
+	(function() {
+		var elem = document.createElement('script');
+		elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+		elem.async = true;
+		elem.type = "text/javascript";
+		var scpt = document.getElementsByTagName('script')[0];
+		scpt.parentNode.insertBefore(elem, scpt);
+	})();
+</script>
+<!-- End Quantcast Tag, Part 1 -->
+
+<meta name="description" content="The 2019 Grammys nominations were announced on Friday, December 7. Find out who made the cut for the 61st annual Grammy Awards." />
+<meta name="keywords" content="" />
+<meta name="news_keywords" content="FYC, Grammy Awards, Grammys" />
+
+<script type="text/javascript">dataLayer = window.dataLayer || []; /* Google Tag Manager */</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pmc_meta = {"lob":"goldderby","page-type":"article","env":"desktop","primary-category":"Grammys","primary-vertical":"","vertical":"","category":["Grammys","Music"],"tag":["FYC","Grammy Awards","Grammys"],"author":["Paul Sheehan"],"logged-in":"","subscriber-type":"","country":"us","post-options":null};
+
+/* ]]> */
+</script>
+		<script>
+			(function(d,w){
+				var i, parts, name, c, rdecode = /(%[0-9A-Z]{2})+/g, rspace = /\+/g, ac = (d ? d.split('; ') : []);
+				for(w.pmc_cookies = {}, i = 0; i < ac.length; i++) {
+					parts = ac[i].split('='), name = parts[0].replace(rdecode, decodeURIComponent), c = parts.slice(1).join('=');
+					if(c.charAt(0) === '"') { c = c.slice(1, -1); } c = c.replace(rdecode, decodeURIComponent).replace(rspace, ' '); w['pmc_cookies'][name] = c;
+				}
+			})(document.cookie, window);
+
+			pmc_meta=pmc_meta || {}, pmc_meta.omni_visit_id = window.pmc_cookies.omni_visit_id || "goldderby." + new Date().getTime() + '.' + (function(l,b,a,c,i,d){for(i=0;i<256;i++){l[i]=(i<16?'0':'')+(i).toString(16);}if(c&&c.getRandomValues){try{d=new Uint32Array(4),c.getRandomValues(d);}catch(e){d=0;}}d=d||[b()*a>>>0,b()*a>>>0,b()*a>>>0,b()*a>>>0];a=d[0],b=d[1],c=d[2],d=d[3];return l[a&0xff]+l[a>>8&0xff]+l[a>>16&0xff]+l[a>>24&0xff]+'-'+l[b&0xff]+l[b>>8&0xff]+'-'+l[b>>16&0x0f|0x40]+l[b>>24&0xff]+'-'+l[c&0x3f|0x80]+l[c>>8&0xff]+'-'+l[c>>16&0xff]+l[c>>24&0xff]+l[d&0xff]+l[d>>8&0xff]+l[d>>16&0xff]+l[d>>24&0xff];})([],Math.random,0x100000000,window.crypto||window.msCrypto);
+			var d = new Date(); d.setTime(d.getTime() + ( 60 * 60 * 1000 )); var expires = d.toGMTString(); var path = "/"; var domain = window.location.hostname;
+			document.cookie = 'omni_visit_id=' + encodeURIComponent(pmc_meta.omni_visit_id) + ( expires ? '; expires=' + expires : '' ) + ( path ? '; path=' + path : '' ) + ( domain ? '; domain=' + domain : '' );
+		</script>
+				<script type="text/javascript">
+		if( window.hasOwnProperty( 'pmc_meta' ) ) {
+			if( !window.hasOwnProperty( 'dataLayer' ) || !window.dataLayer.hasOwnProperty('push') ) {
+				window.dataLayer = [];
+			}
+			window.dataLayer.push( pmc_meta );
+		}
+		</script>
+
+				<script>
+			window.pmc_is_adblocked = false;
+		</script>
+		<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//d9etzk30b05yg.cloudfront.net' />
+<link rel='dns-prefetch' href='//s.swiftypecdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="GoldDerby &raquo; Feed" href="https://www.goldderby.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="GoldDerby &raquo; Comments Feed" href="https://www.goldderby.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="GoldDerby &raquo; 2019 Grammy nominations list: All the nominees for the 61st Grammy Awards [UPDATING LIVE] Comments Feed" href="https://www.goldderby.com/article/2018/2019-grammy-nominations-list-nominees-61st-grammys-news/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.goldderby.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0' href='https://www.goldderby.com/_static/??-eJytkdtuwyAMQH9oFFVLu6dp30LAybwajLDTiL8fE13Uh3Wrqr0Z8Dn4YtdsMHlaAoj1IjagqB2J/ckQjsWVakUrwS5i2rWEJ9sIz0khqc20zJjErlxCLiBihD06MsTt3joR0K7tjlt8jt5cxzPx2CzTkrwip664euAzlIKt5LuNE7NC2Tz9eDctK05aMzzeUQFyCqHNNJ1+wfUdYlvEGXNvlykEKGP9++Ob5HcVCVYh0NZ22xLOacn/IJ0dEZRqVgwz6OPjcSFuu2mx+ZmOywZ9gGbn+ygv8Vf6W3zdH4bh+PI8HPaf0e0VJw==' type='text/css' media='all' />
+<style id='pmc-adm-style-inline-css' type='text/css'>
+div.admz, div.admz-sp { margin-left: auto; margin-right: auto; text-align: center; } #skin-ad-inject-container { display: none; }
+</style>
+<script type="text/javascript" src="https://www.goldderby.com/wp-content/plugins/pmc-plugins/pmc-global-functions/js/pmc-utils.js"></script>			<script type="text/javascript">
+			var pmc_do_analytics_pagecount = true;		//flag to allow analytics code to count a page view
+			var pmc_common_urls = {
+				parent_theme_uri: 'https://www.goldderby.com/wp-content/themes/vip/pmc-goldderby/',
+				current_theme_uri: 'https://www.goldderby.com/wp-content/themes/vip/pmc-goldderby/',
+				fb_channel_uri: 'https://www.goldderby.com/wp-content/plugins/pmc-plugins/partner/facebook/channel.html'
+			};
+			</script>
+		<script type="text/javascript">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			var pmc_ga_dimensions = {"dimension1":"article","dimension3":"1202692301","dimension4":"paul-sheehan-1","dimension5":"grammys|music","dimension6":"fyc|grammy-awards|grammys","dimension8":"grammys","dimension10":"2018","dimension11":"12","dimension12":"07","dimension13":"05","dimension14":"00","dimension25":"2018-12-07T13:00:56+00:00","dimension26":"2018-12-07 05:00:56","dimension27":"Friday","dimension29":"anonymous"};var pmc_ga_mapped_dimensions = {"page-type":"1","page-subtype":"2","id":"3","author":"4","category":"5","tag":"6","vertical":"7","primary-category":"8","primary-vertical":"9","publish-year":"10","publish-month":"11","publish-day":"12","publish-hour":"13","publish-minute":"14","protocol":"15","paywall-entitlement":"16","paywall-sub-level-required":"17","paywall-sub-roadblock-hit":"18","paywall-acct-type":"19","paywall-acct-id":"20","paywall-org-name":"21","paywall-org-id":"22","paywall-auth-provider":"23","paywall-logged-in":"24","publish-timestamp-gmt":"25","publish-timestamp":"26","publish-day-of-week":"27","omni-visit-id":"28","user-type":"29","a-b-test":"30","experiment-name":"31","paywall-special-product-code":"32","paywall-product-code":"33","post-options":"34","child-post-id":"35"};			pmc_ga_dimensions["dimension15"] = document.location.protocol.replace(':', '');
+			(function(dim){
+				var ac = document.cookie ? document.cookie.split('; ') : [];
+				var i, parts, name, c, cookies = {}, rdecode = /(%[0-9A-Z]{2})+/g, rspace = /\+/g;
+				for(i = 0; i < ac.length; i++) {
+					parts = ac[i].split('=');
+					name = parts[0].replace(rdecode, decodeURIComponent);
+					c = parts.slice(1).join('=');
+					if(c.charAt(0) === '"') { c = c.slice(1, -1); }
+					c = c.replace(rdecode, decodeURIComponent).replace(rspace, ' ');
+					cookies[name] = c;
+				}
+				window[dim] = window[dim] || {};
+							if( 'undefined' !== typeof pmc_meta && 'string' === typeof pmc_meta.omni_visit_id ){
+				window[dim]["dimension28"] = pmc_meta.omni_visit_id;
+			}
+					})('pmc_ga_dimensions');
+
+			var pmc_ga_fields_obj = {"useAmpClientId":true};
+			ga('create', "UA-19545934-1", 'auto', pmc_ga_fields_obj);
+			ga('set', 'forceSSL', true);
+
+							ga('set', 'hitCallback', function() { if ( typeof pmc === 'object' && typeof pmc.tracking === 'object' && typeof pmc.tracking.do_call_events === 'function' ) { pmc.tracking.do_call_events(); } } );
+						ga('require', 'linkid', 'linkid.js');
+							ga('require', 'displayfeatures');			ga('set', pmc_ga_dimensions);
+			
+			
+			ga('send', 'pageview');
+		</script>
+
+		<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?ver=1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_header_bidder_script_object = {"pmc_header_bidder_timeout":"1000","pmc_header_bidding_on_gallery":"yes","pmc_hb_gallery_timeout":"500"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.goldderby.com/_static/??-eJytjt0KwjAMRl/Irgw7vRKfpWtjTW3T2p+Jb291E/RGEIVAwsnH4eOXyJCUqxoyt23OFdJ1WZ3NK/4pwDyaJAt0HukZVoEKUOHRVYOUefSKvd5HkBoSG1FrJMNlzlAe5pigwb+o3h/fKI0Lo3TsUEkVDDQXazyBDxOwkqQ63ZU/6ma+FNv7XT8IsdmuxdDbG3QDleY='></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var configuration = {"rendererBaseUrl":"\/\/renderer.qmerce.com","randomBaseUrl":"\/\/random.qmerce.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' async="async" src='//d9etzk30b05yg.cloudfront.net/js/sdk/v2.0/apester-javascript-sdk.min.js?ver=5.0.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_comscore_options = {"pageview_candidate_url":"\/\/www.goldderby.com\/wp-content\/plugins\/pmc-plugins\/pmc-comscore\/xml\/comscore-pageview-candidate.xml"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_apstag = {"is_enabled":"enabled","is_gallery":"","is_video":""};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_adm_config = {"dfp_skin_main_content":["page"],"disable_gpt_single_request":"0","krux_header_bidder_active":"","lazy_load_override":"disable","page_level_referrer_targeting":"disable"};
+var pmc_header_bidder = {"active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.goldderby.com/_static/??-eJyVj1EKwjAQRC9kGsQW8UM8S0zWNDXJhuy2RU9v1ApVBOvf7LDzmJFjEhojQ2SZfG9dJJmCFnOtMZDGDLJ7v6uOVnJB3no8Ki9OfdTssJgTp0U801KICuqKUahErKxURMAP0JtfBRc/gdxCAJKDS88y6I2BfLzMGB7tH7lXqwgjeWCGTIKcjX2aIUlnl3jxOBPuIXNKAoby+JCVLYBSzUKucICcnYFvA39AParSewoewn7d1HWz3dTNrrsBZze+5w=='></script>
+<link rel='https://api.w.org/' href='https://www.goldderby.com/wp-json/' />
+<meta name="generator" content="WordPress 5.0.1" />
+<link rel='shortlink' href='https://www.goldderby.com/?p=1202692301' />
+<link rel="alternate" type="application/json+oembed" href="https://www.goldderby.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.goldderby.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;format=xml" />
+
+	<script type="text/javascript">var ajaxurl = 'https://www.goldderby.com/wp-admin/admin-ajax.php';</script>
+
+<style type='text/css'>img#wpstats{display:none}</style><meta name="author" content="Paul Sheehan">		<style>
+		.getty.alignleft {
+			margin-right: 5px;
+		}
+		.getty.alignright {
+			margin-left: 5px;
+		}
+		</style>
+				<script>
+			try {
+				// Don't rely on jQuery being loaded yet.
+				document.addEventListener( 'DOMContentLoaded', function() {
+					// Record in GA event if ads are blocked.
+					if ( true === window.pmc_is_adblocked ) {
+						ga( 'send', 'event', 'ad_blocker', 'blocked', 'ads_blocked', {
+							nonInteraction: true
+						});
+					}
+				});
+			} catch( err ) {
+				// Do nothing...
+			}
+		</script>
+		
+<!-- Swiftype Meta Tags Start -->
+<meta class="swiftype" name="content_type" data-type="string" content="Article" />
+<meta class="swiftype" name="title" data-type="string" content="2019 Grammy nominations list: All the nominees for the 61st Grammy Awards [UPDATING LIVE]" />
+<meta class="swiftype" name="author" data-type="string" content="Paul Sheehan" />
+<meta class="swiftype" name="published_at" data-type="date" content="2018-12-07 05:00:56" />
+<meta class="swiftype" name="image" data-type="enum" content="https://www.goldderby.com/wp-content/uploads/2017/12/grammy-statue.jpg?w=300" />
+<meta class="swiftype" name="comment_count" data-type="integer" content="2" />
+<meta class="swiftype" name="tags" data-type="string" content="FYC" />
+<meta class="swiftype" name="tags" data-type="string" content="Grammy Awards" />
+<meta class="swiftype" name="tags" data-type="string" content="Grammys" />
+<meta class="swiftype" name="topics" data-type="string" content="Grammys" />
+<meta class="swiftype" name="topics" data-type="string" content="Music" />
+<meta class="swiftype" name="body" data-type="text" content="Nominations for the 61st Grammy Awards were announced by the recording academy on Dec. 7 in three stages. Nominees in the top four general field categories were unveiled on &quot;CBS This Morning.&quot; The contenders in more races were then revealed on Apple Music before the complete list of nominees in dozens of categories was posted on Grammy.com. The nominations announcement had been scheduled for Wednesday but was pushed back two days due to the scheduled memorial services for President George H.W. Bush.
+
+The four general field categories -- Album of the Year, Record of the Year, Song of the Year, and Best New Artist -- are the top prizes at the Grammys. While the nominees are drawn from across a variety of music genres, the winners tend to be the biggest pop and rock acts including recent champs Bruno Mars, Adele, Taylor Swift, and Mumford and Sons.
+
+DISCUSS All the Grammy nominations with music insiders in our red-hot forums
+
+This year&#039;s winners will be revealed on Feb. 10 in a two-part ceremony at the Staples Center in Los Angeles. The majority of the awards in the 84 categories spread across 30 fields will be handed out in a non-televised  event, the Premiere Ceremony, that afternoon. The televised portion of the Grammys will begin on CBS at 4:30 p.m. PT/7:30 p.m. ET. Expect that 3.5 hour telecast to be dominated by musical performances with about 10 presentations of prizes.
+
+SEE 2018 Grammys: Full list of winners at the 60th Grammy Awards
+GENERAL FIELD
+Record Of The Year
+“I Like It” — Cardi B, Bad Bunny &amp; J Balvin
+“The Joke” — Brandi Carlile
+“This Is America” — Childish Gambino
+“God’s Plan” — Drake
+“Shallow” — Lady Gaga &amp; Bradley Cooper
+“All The Stars” — Kendrick Lamar &amp; SZA
+“Rockstar” — Post Malone Featuring 21 Savage
+“The Middle” — Zedd, Maren Morris &amp; Grey
+
+Album Of The Year
+“Invasion Of Privacy” — Cardi B
+“By The Way, I Forgive You” — Brandi Carlile
+“Scorpion” — Drake
+“H.E.R.” — H.E.R.
+“Beerbongs &amp; Bentleys” — Post Malone
+“Dirty Computer” — Janelle Monáe
+“Golden Hour” — Kacey Musgraves
+“Black Panther: The Album, Music From And Inspired By” (Various Artists)
+
+Song Of The Year
+&quot;All The Stars&quot;— Kendrick Duckworth, Mark Spears, Al Shuckburgh, Anthony Tiffith and Solana Rowe
+
+&quot;Boo&#039;d Up&quot;— Larrance Dopson, Joelle James, Ella Mai, and Dijon McFarlane
+
+&quot;God&#039;s Plan&quot; — Aubrey Graham, Daveon Jackson, Brock Korsan, Ron Latour, Matthew Samuels and Noah Shebib.
+
+&quot;In My Blood&quot;— Teddy Geiger, Scott Harris, Shawn Mendes and Geoffrey Warburton
+
+&quot;The Joke&quot;— Brandi Carlile, Dave Cobb, Phil Hanseroth and Tim Hanseroth
+
+&quot;The Middle&quot;— Sarah Aarons, Jordan K. Johnson, Stefan Johnson, Marcus Lomax, Kyle Trewartha, Michael Trewartha and Anton Zaslavski
+
+&quot;Shallow&quot;— Lady Gaga, Mark Ronson, Anthony Rossomando and Andrew Wyatt
+
+&quot;This Is America&quot;— Donald Glover and Ludwig Göransson
+
+Best New Artist
+Chloe x Halle
+Luke Combs
+Greta Van Fleet
+H.E.R.
+Dua Lipa
+Margo Price
+Bebe Rexha
+Jorja Smith
+
+SIGN UP for Gold Derby’s free newsletter with latest predictions
+COUNTRY FIELD
+Best Country Solo Performance
+“Wouldn’t It Be Great?” — Loretta Lynn
+“Mona Lisas And Mad Hatters” — Maren Morris
+“Butterflies” — Kacey Musgraves
+“Millionaire” — Chris Stapleton
+“Parallel Line” — Keith Urban
+
+Best Country Duo/Group Performance
+“Shoot Me Straight” — Brothers Osborne
+“Tequila” — Dan + Shay
+” When Someone Stops Loving You” — Little Big Town
+“Dear Hate” — Maren Morris Featuring Vince Gill
+“Meant To Be” — Bebe Rexha &amp; Florida Georgia Line
+
+Best Country Album
+“Unapologetically” — Kelsea Ballerini
+“Port Saint Joe” — Brothers Osborne
+“Girl Going Nowhere” — Ashley McBryde
+“Golden Hour” — Kacey Musgraves
+“From A Room: Volume 2” — Chris Stapleton
+
+Best Country Song
+“Break Up In The End” — Jessie Jo Dillon, Chase McGill &amp; Jon Nite, songwriters (Cole Swindell)
+
+“Dear Hate” — Tom Douglas, David Hodges &amp; Maren Morris,
+Songwriters (Maren Morris Featuring Vince Gill)
+
+“I Lived It” — Rhett Akins, Ross Copperman, Ashley Gorley &amp; Ben
+Hayslip, songwriters (Blake Shelton)
+
+“Space Cowboy” — Luke Laird, Shane McAnally &amp; Kacey Musgraves,
+songwriters (Kacey Musgraves)
+
+“Tequila” — Nicolle Galyon, Jordan Reynolds &amp; Dan Smyers, songwriters (Dan + Shay)
+
+“When Someone Stops Loving You” — Hillary Lindsey, Chase McGill &amp; Lori McKenna, songwriters (Little Big Town)
+POP FIELD
+Best Pop Solo Performance
+“Colors” — Beck
+“Havana (Live)” — Camila Cabello
+“God Is A Woman” — Ariana Grande
+“Joanne (Where Do You Think You’re Goin’?)” — Lady Gaga
+“Better Now” — Post Malone
+
+Best Pop Duo/Group Performance
+“Fall In Line” — Christina Aguilera Featuring Demi Lovato
+“Don’t Go Breaking My Heart” — Backstreet Boys
+“‘S Wonderful” — Tony Bennett &amp; Diana Krall
+“Shallow” — Lady Gaga &amp; Bradley Cooper
+“Girls I Like You” — Maroon 5 Featuring Cardi B
+“Say Something” — Justin Timberlake Featuring Chris Stapleton
+“The Middle” — Zedd, Maren Morris &amp; Grey
+
+Best Pop Vocal Album
+“Camila” — Camila Cabello
+“Meaning Of Life” — Kelly Clarkson
+“Sweetener” — Ariana Grande
+“Shawn Mendes” — Shawn Mendes
+“Beautiful Trauma” — P!nk
+“Reputation” — Taylor Swift
+TRADITIONAL POP FIELD
+Best Traditional Pop Album
+“Love Is Here To Stay” — Tony Bennett &amp; Diana Krall
+“My Way” — Willie Nelson
+“Nat “King” Cole &amp; Me” — Gregory Porter
+&quot;Standards&quot; — Seal
+&quot;The Music... The Mem&#039;ries... The Magic!&quot; — Barbra Streisand
+R&amp;B FIELD
+Best R&amp;B Performance
+“Long As I Live” — Toni Braxton
+“Summer” — The Carters
+“Y O Y” — Lalah Hathaway
+“Best Part” — H.E.R. Featuring Daniel Caesar
+“First Began” — PJ Morton
+
+Best Traditional R&amp;B Performance
+“Bet Ain’t Worth The Hand” — Leon Bridges
+“Don’t Fall Apart On Me Tonight” — Bettye LaVette
+“Honest” — MAJOR.
+“How Deep Is Your Love” — PJ Morton Featuring Yebba
+“Made For Love” — Charlie Wilson Featuring Lalah Hathaway
+
+Best Urban Contemporary Album
+“Everything Is Love” — The Carters
+“The Kids Are Alright “— Chloe x Halle
+“Chris Dave And The Drumhedz” — Chris Dave And The Drumhedz
+“War &amp; Leisure” — Miguel
+“Ventriloquism” — Meshell Ndegeocello
+
+Best R&amp;B Album
+“Sex &amp; Cigarettes” — Toni Braxton
+“Good Thing” — Leon Bridges
+“Honestly” — Lalah Hathaway
+“H.E.R.” — H.E.R.
+“Gumbo Unplugged (Live)” — PJ Morton
+
+Best R&amp;B Song
+“Boo’d Up” — Larrance Dopson, Joelle James, Ella Mai &amp; Dijon
+McFarlane, songwriters (Ella Mai)
+
+“Come Through And Chill” — Jermaine Cole, Miguel Pimentel &amp; Salaam Remi, songwriters (Miguel Featuring J. Cole &amp; Salaam Remi)
+
+“Feels Like Summer” — Donald Glover &amp; Ludwig Goransson, songwriters (Childish Gambino)
+
+“Focus” — Darhyl Camper Jr, H.E.R. &amp; Justin Love, songwriters (H.E.R.)
+
+“Long As I Live” — Paul Boutin, Toni Braxton &amp; Antonio Dixon, songwriters (Toni Braxton)
+RAP FIELD
+Best Rap Performance
+“Be Careful” — Cardi B
+“Nice For What” — Drake
+“King’s Dead” — Kendrick Lamar, Jay Rock, Future &amp; James Blake
+“Bubblin” — Anderson .Paak
+“Sicko Mode” — Travis Scott, Drake, Big Hawk &amp; Swae Lee
+
+Best Rap/Sung Performance
+“Like I Do” — Christina Aguilera Featuring Goldlink
+“Pretty Little Fears” — 6LACK Featuring J. Cole
+“This Is America” — Childish Gambino
+“All The Stars” — Kendrick Lamar &amp; SZA
+“Rockstar” — Post Malone Featuring 21 Savage
+
+Best Rap Album
+“Invasion Of Privacy” — Cardi B
+“Swimming” — Mac Miller
+“Victory Lap” — Nipsey Hussle
+“Daytona” — Pusha T
+“Astroworld” — Travis Scott
+
+Best Rap Song
+“God’s Plan” — Aubrey Graham, Daveon Jackson, Brock Korsan, Ron
+LaTour, Matthew Samuels &amp; Noah Shebib, songwriters (Drake)
+
+“King’s Dead” — Kendrick Duckworth, Samuel Gloade, James Litherland, Johnny McKinzie, Mark Spears, Travis Walton, Nayvadius Wilburn &amp; Michael Williams II, songwriters (Kendrick Lamar, Jay Rock, Future &amp;
+James Blake)
+
+“Lucky You” — R. Fraser, G. Lucas, M. Mathers, M. Samuels &amp; J.
+Sweet, songwriters (Eminem Featuring Joyner Lucas)
+
+“Sicko Mode” — Khalif Brown, Rogét Chahayed, BryTavious Chambers, Mike Dean, Mirsad Dervic, Kevin Gomringer, Tim Gomringer, Aubrey Graham, John Edward Hawkins, Chauncey Hollis, Jacques Webster, Ozan Yildirim &amp; Cydel Young, songwriters (Travis Scott, Drake, Big Hawk &amp; Swae Lee)
+
+“Win” — K. Duckworth, A. Hernandez, J. McKinzie, M. Samuels
+&amp; C. Thompson, songwriters (Jay Rock)
+ROCK FIELD
+Best Rock Performance
+“Four Out Of Five” —Arctic Monkeys
+“When Bad Does Good” — Chris Cornell
+“Made An America” — The Fever 333
+“Highway Tune” — Greta Van Fleet
+“Uncomfortable” — Halestorm
+
+Best Metal Performance
+“Condemned To The Gallows “— Between The Buried And Me
+“Honeycomb” — Deafheaven
+“Electric Messiah” — High On Fire
+“Betrayer” — Trivium
+“On My Teeth — Underoath
+
+Best Rock Album
+“Rainier Fog” — Alice In Chains
+“M A N I A” — Fall Out Boy
+“Prequelle — Ghost
+“From The Fires” — Greta Van Fleet
+“Pacific Daydream” — Weezer
+
+Best Rock Song
+&quot;Black Smoke Rising&quot; — Jacob Thomas Kiszka, Joshua Michael Kiszka, Samuel Francis Kiszka &amp; Daniel Robert Wagner, songwriters (Greta Van Fleet)
+
+&quot;Jumpsuit&quot; — Tyler Joseph, songwriter (Twenty One Pilots)
+
+&quot;MANTRA&quot; — Jordan Fish, Matthew Kean, Lee Malia, Matthew Nicholls &amp; Oliver Sykes, songwriters (Bring Me The Horizon)
+
+&quot;Masseduction&quot; — Jack Antonoff &amp; Annie Clark, songwriters (St. Vincent)
+
+&quot;Rats&quot; — Tom Dalgety &amp; A Ghoul Writer, songwriters (Ghost)
+ALTERNATIVE FIELD
+Best Alternative Album
+“Tranquility Base Hotel + Casino” —Arctic Monkeys
+“Colors” — Beck
+“Utopia” — Björk
+“American Utopia” — David Byrne
+“Masseduction” — St. Vincent
+AMERICAN ROOTS MUSIC FIELD
+Best Americana Album
+“By The Way, I Forgive You” — Brandi Carlile
+“Things Have Changed” — Bettye LaVette
+“The Tree Of Forgiveness” — John Prine
+“The Lonely, The Lonesome &amp; The Gone” — Lee Ann Womack
+“One Drop Of Truth” — The Wood Brothers
+
+Best Bluegrass Album
+“Portraits in Fiddles” — Mike Barnett
+“Sister Sadie II” — Sister Sadie
+“Rivers and Roads” — Special Consensus
+“The Travelin’ McCourys” — The Travelin’ McCourys
+“North of Despair” — Wood &amp; Wire
+
+Best Traditional Blues Album
+“Something Smells Funky ‘Round Here” — Elvin Bishop’s Big Fun Trio
+“Benton County Relic” — Cedric Burnside
+“The Blues Is Alive and Well” — Buddy Guy
+“No Mercy in This Land” — Ben Harper And Charlie Musselwhite
+“Don’t You Feel My Leg (The Naughty Bawdy Blues of Blue Lu Barker) — Maria Muldaur
+
+Best Contemporary Blues Album
+“Please Don’t Be Dead” — Fantastic Negrito
+“Here In Babylon” — Teresa James And The Rhythm Tramps
+“Cry No More” — Danielle Nicole
+“Out of The Blues” — Boz Scaggs
+“Victor Wainwright and The Train” — Victor Wainwright And The Train
+
+Best Folk Album
+“Whistle Down the Wind” — Joan Baez
+“Black Cowboys” — Dom Flemons
+“Rifles &amp; Rosary Beads” — Mary Gauthier
+“Weed Garden” — Iron &amp; Wine
+“All Ashore” — Punch Brothers
+
+Best Regional Roots Music Album
+“Kreole Rock and Soul” — Sean Ardoin
+“Spyboy” — Cha Wa
+“Aloha From Na Hoa” — Na Hoa
+“No ‘Ane’i” — Kalani Pe’a
+“Mewasinsational – Cree Round Dance Songs” — Young Spirit
+
+Best American Roots Performance
+“Kick Rocks” — Sean Ardoin
+“Saint James Infirmary Blues” — Jon Batiste
+“The Joke”  Brandi Carlile
+“All On My Mind” — Anderson East
+“Last Man Standing” — Willie Nelson
+
+Best American Roots Song
+“All The Trouble” — Waylon Payne, Lee Ann Womack &amp; Adam Wright, songwriters (Lee Ann Womack)
+
+“Build a Bridge” — Jeff Tweedy, songwriter (Mavis Staples)
+
+“The Joke” — Brandi Carlile, Dave Cobb, Phil Hanseroth &amp; Tim Hanseroth, songwriters (Brandi Carlile)
+
+“Knockin’ On Your Screen Door” — Pat McLaughlin &amp; John Prine, songwriters (John Prine)
+
+“Summer’s End” — Pat McLaughlin &amp; John Prine, songwriters (John Prine)
+CHILDREN&#039;S FIELD
+Best Children’s Album
+“All The Sounds” — Lucy Kalantari &amp; The Jazz Cats
+“Building Blocks” — Tim Kubart
+“Falu’s Bazaar” — Falu
+“Giants of Science” — The Pop Ups
+“The Nation of Imagine” — Frank &amp; Deane
+COMEDY FIELD
+Best Comedy Album
+Annihilation, Patton Oswalt
+Equanimity &amp; The Bird Revelation, Dave Chappelle
+Noble Ape, Jim Gaffigan
+Standup For Drummers, Fred Armisen
+Tamborine, Chris Rock
+CONTEMPORARY INSTRUMENTAL FIELD
+Best Contemporary Instrumental Album
+The Emancipation Procrastination, Christian Scott aTunde Adjuah
+Steve Gadd Band, Steve Gadd Band
+Modern Lore, Julian Lage
+Laid Black, Marcus Miller
+Protocol 4, Simon Phillips
+DANCE/ELECTRONIC MUSIC FIELD
+Best Dance Recording
+“Northern Soul” — Above &amp; Beyond Featuring Richard Bedford
+“Ultimatum” — Disclosure (Featuring Fatoumata Diawara)
+“Losing It” — Fisher
+“Electricity” — Silk City &amp; Dua Lipa Featuring Diplo &amp; Mark Ronson
+“Ghost Voices” — Virtual Self
+
+Best Dance/Electronic Album
+“Singularity” —Jon Hopkins
+“Woman Worldwide” — Justice
+“Treehouse” — Sofi Tukker
+“Oil of Every Pearl’s Un-Insides” — SOPHIE
+“Lune Rouge” — TOKiMONSTA
+GOSPEL/CONTEMPORARY CHRISTIAN MUSIC FIELD
+Best Gospel Album
+“One Nation Under God” — Jekalyn Carr
+“Hiding Place” — Tori Kelly
+“Make Room” — Jonathan McReynolds
+“The Other Side” — The Walls Group
+“A Great Work” — Brian Courtney Wilson
+
+Best Contemporary Christian Music Album
+“Look Up Child” — Lauren Daigle
+“Hallelujah Here Below” — Elevation Worship
+“Living With a Fire” — Jesus Culture
+“Surrounded” — Michael W. Smith
+“Survivor: Live From Harding Prison” — Zach Williams
+
+Best Roots Gospel Album
+“Unexpected” — Jason Crabb
+“Clear Skies” — Ernie Haase &amp; Signature Sound
+“Favorites: Revisited By Request” — The Isaacs
+“Still Standing” — The Martins
+“Love Love Love” — Gordon Mote
+
+Best Gospel Performance/Song
+“You Will Win” — Jekalyn Carr; Allen Carr &amp; Jekalyn Carr, Songwriters
+
+“Won’t He Do It” — Koryn Hawthorne
+
+“Never Alone” — Tori Kelly Featuring Kirk Franklin; Kirk Franklin &amp; Victoria Kelly, Songwriters
+
+“Cycles” Jonathan Mcreynolds Featuring Doe; Jonathan McReynolds, Songwriter
+
+“A Great Work” — Brian Courtney Wilson; Aaron W. Lindsey, Alvin Richardson &amp; Brian Courtney Wilson, Songwriters
+
+Best Contemporary Christian Music Performance/Song
+“Reckless Love” — Cory Asbury; Cory Asbury, Caleb Culver &amp; Ran Jackson, songwriters
+
+“You Say” — Lauren Daigle; Lauren Daigle, Jason Ingram &amp; Paul Mabury, songwriters
+
+“Joy” — for King &amp; Country; Ben Glover, Matt Hales, Stephen Blake Kanicka, Seth Moslely, Joel Smallbone, Luke Smallbone &amp; Tedd Tjornhom, songwriters
+
+“Grace Got You” — MercyMe Featuring John Reuben; David Garcia, Ben Glover, MercyMe, Solomon Olds &amp; John Reuben, songwriters
+
+“Known”— Tauren Wells; Ethan Hulse, Jordan Sapp &amp; Tauren
+Wells, songwriters
+
+JAZZ FIELD
+
+Best Improvised Jazz Solo
+“Some Of That Sunshine” — Regina Carter, soloist
+“Don’t Fence Me In” — John Daversa, soloist
+“We See” — Fred Hersch, soloists
+“De-dah” — Brad Mehldau, soloist
+“Cadenas” — Miguel Zenón, soloist
+
+Best Jazz Vocal Album
+“My Mood Is You” — Freddy Cole
+“The Questions” — Kurt Elling
+“The Subject Tonight Is Love” — Kate McGarry With Keith Ganz &amp; Gary Versace
+“If You Really Want” — Raul Midón With The Metropole Orkest Conducted By Vince Mendoza
+“The Window” — Cécile McLorin Salvant
+
+Best Jazz Instrumental Album
+“Diamond Cut” — Tia Fuller
+“Live In Europe” — Fred Hersch Trio
+“Seymour Reads The Constitution!” — Brad Mehldau Trio
+“Still Dreaming” — Joshua Redman, Ron Miles, Scott Colley &amp; Brian Blade
+“Emanon” — The Wayne Shorter Quartet
+
+Best Large Jazz Ensemble Album
+“All About That Basie” — The Count Basie Orchestra Directed By Scotty
+Barnhart
+“American Dreamers: Voices Of Hope, Music Of Freedom” — John Daversa Big Band Featuring DACA Artists
+“Presence” — Orrin Evans And The Captain Black Big Band
+“All Can Work” — John Hollenbeck Large Ensemble
+“Barefoot Dances And Other Visions” —  Jim McNeely &amp; The Frankfurt Radio Big Band
+
+Best Latin Jazz Album
+“Heart Of Brazil”— Eddie Daniels
+“Back To The Sunset”— Dafnis Prieto Big Band
+“West Side Story Reimagined”— Bobby Sanabria Multiverse Big Band
+“Cinque”— Elio Villafranca
+“Yo Soy La Tradición” — Miguel Zenón Featuring Spektral Quartet
+LATIN FIELD
+Best Latin Pop Album
+“Prometo” — Pablo Alboran
+“Sincera” — Claudia Brant
+“Musas (Un Homenaje Al Folclore Latinoamericano En Manos De Los Macorinos), Vol. 2” — Natalia Lafourcade
+“2:00 AM” — Raquel Sofía
+“Vives” — Carlos Vives
+
+Best Latin Rock, Urban or Alternative Album
+“Clairoscura” — Aterciopelados
+“Coastcity” — Coastcity
+“Encanto Tropical” — Monsieur Periné
+“Gourmet” — Orishas
+“Aztlán” — Zoé
+
+Best Regional Mexican Music Album (Including Tejano)
+“Primero Soy Mexicana” — Angela Aguilar
+“Mitad y Mitad” — Calibre 50
+“Totalmente Juan Gabriel Vol. II” — Aida Cuevas
+“Cruzando Borders” — Los Texmaniacs
+“Leyendas De Mi Pueblo” — Mariachi Sol De Mexico De Jose Hernandez
+“¡México Por Siempre!” — Luis Miguel
+
+Best Tropical Latin Album
+“Pa’ Mi Gente” — Charlie Aponte
+“Legado” — Formell Y Los Van Van
+“Orquesta Akokán” — Orquesta Akokán
+“Ponle Actitud” — Felipe Peláez
+“Anniversary” — Spanish Harlem Orchestra
+MUSICAL THEATRE FIELD
+“The Band’s Visit”
+Etai Benson, Adam Kantor, Katrina Lenk &amp; Ari’el Stachel, principal soloists
+Dean Sharenow &amp; David Yazbek, producers
+(David Yazbek, composer &amp; lyricist)
+(Original Broadway Cast)
+
+“Carousel&quot;
+Renee Fleming, Alexander Gemignani, Joshua Henry, Lindsay Mendez &amp; Jessie Mueller, principal soloists;
+Steven Epstein, producer
+(Richard Rodgers, composer; Oscar Hammerstein II, lyricist)
+(2018 Broadway Cast)
+
+“Jesus Christ Superstar Live in Concert” — Sara Bareilles, Alice Cooper, Ben Daniels, Brandon Victor Dixon, Erik Grönwall, Jin Ha, John Legend, Norm Lewis &amp; Jason Tam, principal soloists
+Harvey
+Mason, Jr., producer
+(Andrew Lloyd-Webber, composer; Tim Rice, lyricist)
+(Original Television Cast)
+
+“My Fair Lady”
+Lauren Ambrose, Norbert Leo Butz &amp; Harry Hadden-Paton, principal soloists
+Andre Bishop, Van Dean, Hattie K. Jutagir, David Lai, Adam Siegel &amp; Ted Sperling, producers (Frederick Loewe, composer; Alan Jay Lerner, lyricist)
+(2018 Broadway Cast)
+
+“Once On This Island”
+Phillip Boykin, Merle Dandridge, Quentin Earl Darrington, Hailey Kilgore, Kenita R. Miller, Alex Newell, Isaac Powell &amp; Lea Salonga, principal soloists;
+Lynn Ahrens, Hunter Arnold, Ken Davenport, Stephen Flaherty &amp; Elliot Scheiner, producers
+(Stephen Flaherty, composer; Lynn Ahrens, lyricist)
+(New Broadway Cast)
+MUSIC VIDEO FIELD
+Best Music Video
+“Apesh*t,” The Carters
+“This Is America,” Childish Gambino
+“I’m Not Racist,” Joyner Lucas
+“Pynk,” Janelle Monae
+“Mumbo Jumbo,” Tierra Whack
+
+Best Music Film 
+Life in 12 Bars
+Whitney
+Quincy
+Itzhak
+The King
+NEW AGE FIELD
+Best New Age Album
+“Hiraeth” — Lisa Gerrard &amp; David Kuckhemann
+“Beloved” — Snatam Kaur
+“Opium Moon” — Opium Moon
+“Molecules Of Motion” — Steve Roach
+“Moku Maluhia – Peaceful Island” — Jim Kimo West
+REGGAE FIELD
+Best Reggae Album
+“As The World Turns” — Black Uhuru
+“Reggae Forever” — Etana
+“Rebellion Rises” — Ziggy Marley
+“A Matter of Time” — Protoje
+“44/876” — Sting &amp; Shaggy
+SPOKEN WORD FIELD
+Best Spoken Word Album (Includes Poetry, Audio Books &amp; Storytelling)
+“Accessory to War (Neil Degrasse Tyson &amp; Avis Lang)”  — Courtney B. Vance
+“Calypso”  — David Sedaris
+“Creative Quest” — Questlove
+“Faith – A Journey For All” — Jimmy Carter
+“The Last Black Unicorn” — Tiffany Haddish
+WORLD MUSIC FIELD
+Best World Music Album
+“Deran” — Bombino
+“Fenfo” — Fatoumata Diawara
+“Black Times” — Seun Kuti &amp; Egypt 80
+“Freedom” — Soweto Gospel Choir
+“The Lost Songs of World War II” — Yiddish Glory
+VISUAL MEDIA FIELD
+Best Compilation Soundtrack For Visual Media
+“Call Me By Your Name” — (Various Artists)
+“Deadpool 2” — (Various Artists)
+“The Greatest Showman” — (Various Artists)
+“Lady Bird” — (Various Artists)
+“Stranger Things” — (Various Artists)
+
+Best Score Soundtrack For Visual Media
+“Black Panther” — Ludwig Göransson, composer
+“Blade Runner 2049” — Benjamin Wallfisch &amp; Hans Zimmer, composers
+“Coco” — Michael Giacchino, composer
+“The Shape of Water” — Alexandre Desplat, composer
+“Star Wars: The Last Jedi” — John Williams, composer
+
+Best Song Written For Visual Media
+&quot;All The Stars&quot; — Kendrick Duckworth, Solána Rowe, Alexander William Shuckburgh, Mark Anthony Spears &amp; Anthony Tiffith, songwriters (Kendrick Lamar &amp; SZA), Track from: Black Panther
+
+&quot;Mystery Of Love&quot; — Sufjan Stevens, songwriter (Sufjan Stevens), Track from: Call Me By Your Name
+
+&quot;Remember Me&quot; — Kristen Anderson-Lopez &amp; Robert Lopez, songwriters (Miguel Featuring Natalia Lafourcade), Track from: Coco
+
+&quot;Shallow&quot; — Lady Gaga, Mark Ronson, Anthony Rossomando &amp; Andrew Wyatt, songwriters (Lady Gaga &amp; Bradley Cooper), Track from: A Star Is Born
+
+&quot;This Is Me&quot; — Benj Pasek &amp; Justin Paul, songwriters (Keala Settle &amp; The Greatest Showman Ensemble), Track from: The Greatest Showman
+PRODUCTION, NON-CLASSICAL FIELD 
+Producer Of The Year, Non-Classical
+Boi-1da
+Larry Klein
+Linda Perry
+Kanye West
+Pharrell Williams" />
+<!-- Swiftype Meta Tags End -->
+
+
+<script src="https://tagan.adlightning.com/penske/blacklist_script.js" defer></script>
+<script src="https://tagan.adlightning.com/penske/blocking_script.js" defer></script>
+<script src="https://tagan.adlightning.com/penske/op.js" defer></script>
+<link rel="canonical" href="https://www.goldderby.com/article/2018/2019-grammy-nominations-list-nominees-61st-grammys-news/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var pmc_site_config = {"rot13_hostname":"jjj.tbyqqreol.pbz","hostname":"www.goldderby.com","is_proxied":null};
+
+/* ]]> */
+</script>
+		<script type='text/javascript'>
+			var pmc_tracking_url = "https://s3.amazonaws.com/heartbeat.pmc.com/track?host=www.goldderby.com&path=%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&ct=article&lob=goldderby&loc=us&env=desktop&post_id=1202692301&comment_count=2";
+			var pmc_tracking_image = new Image();
+			if ( 'undefined' !== typeof pmc_meta && 'string' === typeof pmc_meta.omni_visit_id ) {
+				pmc_tracking_url = pmc_tracking_url + '&omni_visit_id=' + pmc_meta.omni_visit_id;
+			}
+			if ( 'string' === typeof window.location.hash && window.location.hash.length ) {
+				pmc_tracking_url = pmc_tracking_url + "&h=" + encodeURIComponent( window.location.hash );
+			}
+			pmc_tracking_image.src = pmc_tracking_url + "&ts=" + Date.now();
+		</script>
+		<script async src="//js-sec.indexww.com/ht/p/182698-234582623405386.js"></script><link rel="amphtml" href="https://www.goldderby.com/article/2018/2019-grammy-nominations-list-nominees-61st-grammys-news/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2019 Grammy nominations list: All the nominees for the 61st Grammy Awards [UPDATING LIVE]" />
+<meta property="og:url" content="https://www.goldderby.com/article/2018/2019-grammy-nominations-list-nominees-61st-grammys-news/" />
+<meta property="og:description" content="Nominations for the 61st Grammy Awards were announced by the recording academy on Dec. 7 in three stages. Nominees in the top four general field categories were unveiled on &#8220;CBS This Morning.…" />
+<meta property="article:published_time" content="2018-12-07T13:00:56+00:00" />
+<meta property="article:modified_time" content="2018-12-07T15:09:50+00:00" />
+<meta property="og:site_name" content="GoldDerby" />
+<meta property="og:image" content="https://www.goldderby.com/wp-content/uploads/2017/12/grammy-statue.jpg" />
+<meta property="og:image:width" content="620" />
+<meta property="og:image:height" content="360" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:creator" content="@GoldDerby" />
+<meta name="twitter:site" content="@GoldDerby" />
+<meta name="twitter:text:title" content="2019 Grammy nominations list: All the nominees for the 61st Grammy Awards [UPDATING LIVE]" />
+<meta name="twitter:image" content="https://www.goldderby.com/wp-content/uploads/2017/12/grammy-statue.jpg?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- End Jetpack Open Graph Tags -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var pmc_krux = {"lob":"goldderby","page-type":"article","env":"desktop","primary-category":"Grammys","primary-vertical":"","vertical":"","category":["Grammys","Music"],"tag":["FYC","Grammy Awards","Grammys"],"author":["Paul Sheehan"],"logged-in":"","subscriber-type":""};
+
+/* ]]> */
+</script>
+<link rel="icon" href="https://www.goldderby.com/wp-content/uploads/2018/04/cropped-gd_favicon-1.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://www.goldderby.com/wp-content/uploads/2018/04/cropped-gd_favicon-1.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.goldderby.com/wp-content/uploads/2018/04/cropped-gd_favicon-1.png?w=180" />
+<meta name="msapplication-TileImage" content="https://www.goldderby.com/wp-content/uploads/2018/04/cropped-gd_favicon-1.png?w=270" />
+<!-- PMCBA-753 -->
+<!-- Hotjar Tracking Code for http://goldderby.com/ -->
+<script>
+	(function(h,o,t,j,a,r){
+		h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		h._hjSettings={hjid:624224,hjsv:5};
+		a=o.getElementsByTagName('head')[0];
+		r=o.createElement('script');r.async=1;
+		r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		a.appendChild(r);
+	})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+</head>
+
+<body class="bp-legacy post-template-default single single-post postid-1202692301 single-format-standard group-blog 2019-grammy-nominations-list-nominees-61st-grammys-news post pmc-desktop pmc-no-tablet pmc-no-mobile geo-us no-js">
+<script async="1">
+	(function() {
+		__mtm = [ "57967f9aeece1e3c10e95b8e", "cdn01.mzbcdn.net/mngr" ];
+		var s = document.createElement('script');
+		s.async = 1;
+		s.src = '//' + __mtm[1] + '/mtm.js';
+		var e = document.getElementsByTagName('script')[0];
+		(e.parentNode || document.body).insertBefore(s, e);
+	})();
+</script><!--DFP Prestitial ad call -->
+
+<div id="prestitial-ad-section" class="hide">
+	<div id="prestitial-ad-outer-container">
+		<div id="prestitial-ad-overlay"></div>
+		<div id="prestitial-ad-close">
+							Click to Skip Ad
+					</div>
+		<div id="prestitial-ad-duration-counter"><em>Closing in...</em></div>
+		<div id="prestitial-ad-container"></div>
+		<div id="prestitial-ad-third-party-content-view-tracker"></div>
+	</div>
+	<div id="prestitial-ad-inject-container" class="hide">
+			<div class="admz" id="adm-dfp-prestitial">
+					<div class="adma google-publisher" data-device="Desktop" data-width="1">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-dsk-tab-news-oop-int-uid1" class="ad-rotatable adw-1 adh-1"></div>
+	</div>
+			</div>
+				</div>
+	</div>
+</div>
+
+<!-- end DFP Prestitial ad call -->
+<div  id="pmc-adm-interrupts-container" class="interstitial" >
+	<script type="text/javascript" language="javascript">
+		pmc_admanager.settings.interrupt_counter = 10;
+	</script>
+	<style>
+		body.interrupt-ads > * {
+			display: none;
+		}
+
+		body #pmc-adm-interrupts-container {
+			display: none;
+		}
+
+		body.interrupt-ads #pmc-adm-interrupts-container  {
+			display: block;
+		}
+
+		body.interrupt-ads {
+			font-size: 1em; font-family:Verdana, Geneva, sans-serif;
+		}
+
+		body.interrupt-ads a {
+			color: #000; text-decoration: none;
+		}
+
+		#ad-interruptus-header {
+			width:75%; margin: 1% auto; padding:0;
+			font-weight: bold;
+		}
+
+		#ad-interruptus-header #site-logo, #ad-interruptus-header #continue-link {
+			width: 40%; display: inline-block;
+		}
+
+		#ad-interruptus-header #site-logo {
+			left 0; font-size: 2em;
+		}
+
+		#ad-interruptus-header #continue-link {
+			float: right; text-align:right; font-size: 1em;
+		}
+
+		#timer {
+			width:85%; margin: 2% auto; padding:0;
+			text-align:center;
+		}
+
+		#pmc-adm-ad-interruptus {
+			width:90%; margin: 20px auto; padding:0;
+			text-align:center; display: block;
+		}
+	</style>
+	<div id="ad-interruptus-header">
+		<a href="javascript:pmc_admanager.hide_interrupt_ads();"><div id="site-logo">GoldDerby</div></a>
+		<div id="continue-link">
+			<a href="javascript:pmc_admanager.hide_interrupt_ads();" class="skip-ad-close"></a>
+			<a href="javascript:pmc_admanager.hide_interrupt_ads();">Continue to GoldDerby</a>
+			<a href="javascript:pmc_admanager.hide_interrupt_ads();" class="skip-ad-text">SKIP AD</a>
+		</div>
+	</div>
+
+	<div id="timer">
+		You will be redirected back to your article in <span id="pmc_ads_interrupts_timer"></span> seconds
+		<script type="text/javascript" language="javascript">
+			pmc_admanager.interrupt_timer();
+		</script>
+	</div>
+	<div id="pmc-adm-ad-interrupts">	<div class="admz" id="adm-interstitial">
+					<div class="adma google-publisher" data-device="Desktop" data-width="970">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-gd-interstitial-uid2" class=" adw-970 adh-600"></div>
+	</div>
+			</div>
+				</div>
+</div>
+</div>
+<script type="text/javascript" id="show-interrupts">
+	var ck = 'pmc-adi-31bb2464aad8b905af7a81e1d57b77ae';
+
+	var cookie_check = pmc.cookie.get( ck );
+	var show_interrupt_hash = location.hash;
+
+	if( show_interrupt_hash.indexOf('showinterrupt') > -1 ){
+		// we want to force the interrupt to be shown for 200 seconds without a cookie written or any other check.
+		pmc_admanager.settings.interrupt_counter = 200;
+		pmc_admanager.show_interrupt_ads();
+
+	}else if( cookie_check == null || typeof cookie_check === 'undefined' || cookie_check == ''){
+		pmc_adm_has_interrupts = true; // global variabl telling us that there is an interstitial or prestitial on this page.
+		// we got to this point so we need to set the cookie so that this overlay doesn't show up again.
+		//set endpoint cookie
+		pmc.cookie.set(ck, 1, 259200, '/');
+
+		pmc_admanager.show_interrupt_ads();
+	}
+
+</script>
+<!-- Placeholder for Responsive Skin Ad -->
+<div id="skin-ad-section">
+
+	<div id="skin-ad-left-rail-container"></div>
+
+	<div id="skin-ad-right-rail-container"></div>
+	<div id="skin-ad-inject-container">
+			<div class="admz" id="adm-responsive-skin-ad">
+					<div class="adma google-publisher" data-device="Desktop" data-width="1">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-gd-ros-skin-uid3" class="ad-rotatable adw-1 adh-1"></div>
+	</div>
+			</div>
+				</div>
+	</div>
+</div>
+
+<!-- End Placeholder for Responsive Skin Ad -->	<div id="page" class="site shadow-wrapper">
+		<div class="content-cover"></div>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+									<p class="site-title"><a href="https://www.goldderby.com/" rel="home">GoldDerby</a></p>
+				
+				<div class="logo-tagline">Predict Hollywood Races</div>
+			</div><!-- .site-branding -->
+
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-user-container menu-container user-not-logged-in">
+					<ul class="user-info">
+															<li>
+																				<a href="https://www.goldderby.com/member-login/?redirect_to=https%3A%2F%2Fwww.goldderby.com%2Fleagues&#038;login-nonce=2af739472c">Log In</a>
+									</li>
+																		<li>
+																				<a href="https://www.goldderby.com/member-register/?redirect_to=https%3A%2F%2Fwww.goldderby.com%2Fleagues&#038;login-nonce=2af739472c">Register</a>
+									</li>
+																				</ul>
+				</div>
+
+				<div class="menu-primary-container menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-1201673559" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201673559"><a href="#">Predictions</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201673540" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201673540"><a href="https://www.goldderby.com/c/theater/tony-awards/">Predictions</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1201915014" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201915014"><a href="https://www.goldderby.com/awardshows/expert-predictions/oscars-nominations-2019/sort/recent/">Oscars Predictions by Experts</a></li>
+		<li id="menu-item-1202653059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202653059"><a href="https://www.goldderby.com/awardshows/expert-predictions/golden-globes-film-2019/best-film-drama/sort/recent/">Golden Globes (Film): Experts</a></li>
+		<li id="menu-item-1201823664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201823664"><a href="https://www.goldderby.com/awardshows/editor-predictions/oscars-nominations-2019/sort/recent/">Oscars Predictions by Editors</a></li>
+		<li id="menu-item-1202443706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202443706"><a href="https://www.goldderby.com/awardshows/expert-predictions/sag-awards-film-nominations-2019/sort/recent/">SAG Awards (Film): Experts</a></li>
+		<li id="menu-item-1201913921" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201913921"><a href="https://www.goldderby.com/awardshows/top24-predictions/oscars-nominations-2019/best-picture/sort/recent/">Oscar Predictions by Top 24</a></li>
+		<li id="menu-item-1202653062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202653062"><a href="https://www.goldderby.com/awardshows/editor-predictions/sag-awards-tv-nominations-2019/drama-ensemble/sort/recent/">SAG Awards (TV): Editors</a></li>
+		<li id="menu-item-1201823744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201823744"><a href="https://www.goldderby.com/awardshows/editor-predictions/grammy-awards-2019/sort/recent/">Grammy Awards: Editors</a></li>
+		<li id="menu-item-1201673641" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201673641"><a href="https://www.goldderby.com/awardshows/star24-predictions/grammy-awards-2019/sort/recent/">Grammy Awards: All Stars</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1201940891" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201940891"><a href="https://www.goldderby.com/c/film/">Odds &#038; Rankings</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1201940929" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201940929"><a href="https://www.goldderby.com/odds/expert-odds/oscars-nominations-2019/">Oscar Odds: Experts</a></li>
+		<li id="menu-item-1202443703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202443703"><a href="https://www.goldderby.com/odds/combined-odds/oscars-nominations-2019/">Oscar Odds: Combined</a></li>
+		<li id="menu-item-1202194992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202194992"><a href="https://www.goldderby.com/odds/combined-odds/golden-globes-film-2019/">Golden Globes (Film)</a></li>
+		<li id="menu-item-1201958571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201958571"><a href="https://www.goldderby.com/odds/combined-odds/golden-globes-tv-2019/">Golden Globes (TV)</a></li>
+		<li id="menu-item-1202653047" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202653047"><a href="https://www.goldderby.com/odds/combined-odds/sag-awards-film-nominations-2019/">SAG Awards (Film)</a></li>
+		<li id="menu-item-1202438292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202438292"><a href="https://www.goldderby.com/odds/combined-odds/sag-awards-tv-nominations-2019/">SAG Awards (TV)</a></li>
+		<li id="menu-item-1202443699" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202443699"><a href="https://www.goldderby.com/odds/user-odds/grammy-nominations-2019">Grammy Odds: Combined</a></li>
+		<li id="menu-item-1202653051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202653051"><a href="https://www.goldderby.com/odds/editor-odds/grammy-nominations-2019/">Grammy Odds: Editors</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1201940898" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201940898"><a href="https://www.goldderby.com/leagues/">LOBBY: Make Your Predictions</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1202017158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202017158"><a href="https://www.goldderby.com/official-contest-rules/">Official Contest Rules</a></li>
+		<li id="menu-item-1202684419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202684419"><a href="https://www.goldderby.com/quizzes">Trivia Quizzes</a></li>
+		<li id="menu-item-1202079464" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202079464"><a href="https://www.goldderby.com/leagues/archived/">Leaderboards</a></li>
+		<li id="menu-item-1202080943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202080943"><a href="https://www.goldderby.com/accuracy/">Predictions: Accuracy Rates</a></li>
+		<li id="menu-item-1202194994" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202194994"><a href="https://www.goldderby.com/article/2017/how-to-make-predictions-at-gold-derby/">Hot to Make Your Predictions at Gold Derby</a></li>
+		<li id="menu-item-1202081308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202081308"><a href="https://pages.email.goldderby.com/signup/">Sign Up: For Our FREE Urgent Newsletter</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1202421639" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1202421639"><a href="https://www.goldderby.com/c/film/oscars/">Oscars Articles</a></li>
+</ul>
+</li>
+<li id="menu-item-1201673553" class="menu-item menu-item-type-post_type_archive menu-item-object-forum menu-item-has-children menu-item-1201673553"><a href="https://www.goldderby.com/forums/">Forums</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201673576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201673576"><a href="/forums/">Popular</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1201818347" class="menu-item menu-item-type-post_type_archive menu-item-object-forum menu-item-1201818347"><a href="https://www.goldderby.com/forums/">All Forums</a></li>
+		<li id="menu-item-1201673546" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673546"><a href="https://www.goldderby.com/forum/movies/">Movies</a></li>
+		<li id="menu-item-1201673549" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673549"><a href="https://www.goldderby.com/forum/television/">TV</a></li>
+		<li id="menu-item-1201673547" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673547"><a href="https://www.goldderby.com/forum/music/">Music</a></li>
+		<li id="menu-item-1201673550" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673550"><a href="https://www.goldderby.com/forum/theater/">Theater</a></li>
+		<li id="menu-item-1201673544" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673544"><a href="https://www.goldderby.com/forum/daytime-tv/">Daytime TV</a></li>
+		<li id="menu-item-1201673548" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673548"><a href="https://www.goldderby.com/forum/reality-tv/">Reality TV</a></li>
+		<li id="menu-item-1201673545" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201673545"><a href="https://www.goldderby.com/forum/general-discussion/">General Discussion</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1201818366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201818366"><a href="/forums/">More</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1201818467" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201818467"><a href="https://www.goldderby.com/forum/games-lets-play-games/">Games! Let&#8217;s Play Games!</a></li>
+		<li id="menu-item-1201818469" class="menu-item menu-item-type-post_type menu-item-object-forum menu-item-1201818469"><a href="https://www.goldderby.com/forum/polls/">Polls!</a></li>
+		<li id="menu-item-1201935353" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201935353"><a href="/members/">Members</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1201819190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201819190"><a href="/#main">Reality TV</a>
+<ul class="sub-menu">
+	<li id="menu-item-1202058929" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1202058929"><a href="https://www.goldderby.com/c/tv/">Reality TV Odds</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1202605513" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202605513"><a href="https://www.goldderby.com/odds/combined-odds/dancing-with-the-stars-27-finale/">&#8216;Dancing with the Stars&#8217; Odds</a></li>
+		<li id="menu-item-1202401152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202401152"><a href="https://www.goldderby.com/odds/combined-odds/dancing-with-the-stars-juniors-week-8/">&#8216;DWTS: Juniors&#8217; Odds</a></li>
+		<li id="menu-item-1202676305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202676305"><a href="https://www.goldderby.com/odds/combined-odds/rupauls-drag-race-all-stars-4-episode-1/">&#8216;RuPaul&#8217;s Drag Race&#8217; Odds</a></li>
+		<li id="menu-item-1202624495" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202624495"><a href="https://www.goldderby.com/odds/combined-odds/survivor-37-finale/">&#8216;Survivor&#8217; Odds</a></li>
+		<li id="menu-item-1202621802" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202621802"><a href="https://www.goldderby.com/odds/combined-odds/the-voice-15-finale/">&#8216;The Voice&#8217; odds</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1202058934" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1202058934"><a href="https://www.goldderby.com/c/film/">Users Leaderboards</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1202535885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202535885"><a href="https://www.goldderby.com/leagues/archived/">All Reality TV Leaderboards</a></li>
+		<li id="menu-item-1202403373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403373"><a href="https://www.goldderby.com/season-long-leaderboard/dancing-with-the-stars-27/">&#8216;Dancing with the Stars&#8217; Leaderboard</a></li>
+		<li id="menu-item-1202403376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403376"><a href="https://www.goldderby.com/season-long-leaderboard/rupauls-drag-race-10/">&#8216;RuPaul&#8217;s Drag Race&#8217; Leaderboard</a></li>
+		<li id="menu-item-1202403374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403374"><a href="https://www.goldderby.com/season-long-leaderboard/survivor-37/">&#8216;Survivor&#8217; Leaderboard</a></li>
+		<li id="menu-item-1202403379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403379"><a href="https://www.goldderby.com/season-long-leaderboard/the-voice-15/">&#8216;The Voice&#8217; Leaderboard</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1202403383" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1202403383"><a href="https://www.goldderby.com/c/tv/reality-tv/">Reality TV News</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1202403378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403378"><a href="https://www.goldderby.com/c/tv/reality-tv/">All Reality TV News</a></li>
+		<li id="menu-item-1202482154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202482154"><a href="https://www.goldderby.com/t/americas-got-talent/">&#8216;America&#8217;s Got Talent&#8217; News</a></li>
+		<li id="menu-item-1202403387" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403387"><a href="https://www.goldderby.com/t/big-brother/">&#8216;Big Brother&#8217; News</a></li>
+		<li id="menu-item-1202403390" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403390"><a href="https://www.goldderby.com/t/dancing-with-the-stars/">&#8216;Dancing With the Stars&#8217; News</a></li>
+		<li id="menu-item-1202403389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403389"><a href="https://www.goldderby.com/t/survivor/">&#8216;Survivor&#8217; News</a></li>
+		<li id="menu-item-1202403386" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403386"><a href="https://www.goldderby.com/t/the-voice/">&#8216;The Voice&#8217; News</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1202403400" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1202403400"><a href="https://www.goldderby.com/c/tv/primetime-tv/">Primetime TV News</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1202403406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403406"><a href="https://www.goldderby.com/c/tv/primetime-tv/">All Primetime TV News</a></li>
+		<li id="menu-item-1202403401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403401"><a href="https://www.goldderby.com/t/outlander/">&#8216;Outlander&#8217; News</a></li>
+		<li id="menu-item-1202403402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403402"><a href="https://www.goldderby.com/t/the-walking-dead/">&#8216;The Walking Dead&#8217; News</a></li>
+		<li id="menu-item-1202403404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403404"><a href="https://www.goldderby.com/t/stranger-things/">&#8216;Stranger Things&#8217; News</a></li>
+		<li id="menu-item-1202403407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202403407"><a href="https://www.goldderby.com/t/game-of-thrones/">&#8216;Game of Thrones&#8217; News</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1201745467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201745467"><a href="/gallery/">Galleries</a></li>
+<li id="menu-item-1201745468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201745468"><a href="/video/">Videos</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201973836" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201973836"><a href="https://www.goldderby.com/video/playlist/experts-smackdowns/">Videos: Stars, Experts &#038; Editors</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1201974176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201974176"><a href="https://www.goldderby.com/video/playlist/2019-oscar-contenders/">Q&#038;As: Oscar Contenders</a></li>
+		<li id="menu-item-1202578613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202578613"><a href="https://www.goldderby.com/video/playlist/editors-oscar-predictions-2018/">Editor Slugfests: Oscars, Golden Globes &#038; SAG</a></li>
+		<li id="menu-item-1202604494" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202604494"><a href="https://www.goldderby.com/video/playlist/inside-track-video/">Oscar Experts vs. Tom O&#8217;Neil</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1201974177" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201974177"><a href="https://www.goldderby.com/video/playlist/2018-editors-emmy-slugfests/">Prediction Slugfests: Golden Globes &#038; SAG</a></li>
+</ul>
+</li>
+<li id="menu-item-1201673578" class="special-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-1201673578"><a href="/leagues/">Make Your Predictions!</a></li>
+</ul></div>				<div class="menu-secondary-container menu-container">
+					<ul class="secondary-navigation">
+						<li id="sn-search" class="sn-search">
+							<div class="search-wrapper">
+										<section id="swiftype-search-widget" class="swiftype">
+			<div class="search_form block search_form_widget">
+				<div data-st-search-form="small_search_form"></div>
+			</div>
+		</section>
+									</div>
+							<a href="#" class="fa fa-search"></a>
+						</li>
+					</ul>
+				</div>
+			</nav><!-- #site-navigation -->
+		</header><!-- #masthead -->
+					<div id="header-slider" class="header-slider">
+				<section id="gd_header_slider_widget-9" class="widget widget_gd_header_slider_widget"><div class="header-slider slick-slider" data-slick='{"dots":false,"infinite":true,"speed":300,"slidesToShow":4,"slidesToScroll":4,"responsive":[{"breakpoint":1024,"settings":{"slidesToShow":3,"slidesToScroll":3,"infinite":true,"dots":false}},{"breakpoint":768,"settings":{"slidesToShow":2,"slidesToScroll":2}},{"breakpoint":480,"settings":{"slidesToShow":1,"slidesToScroll":1}}]}'>
+			<div class="slide slide-section" onclick="window.location='https://www.goldderby.com/odds/combined-odds/oscars-nominations-2019/'">
+			<h3 title="Oscars Nominations 2019">Oscars Nominations 2019</h3>
+			<h5>
+			Predictions			</h5>
+		</div>
+					<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/oscars-nominations-2019/'">
+				<h4 title="Best Picture">Best Picture</h4>
+				<ul>
+												<li>
+								<span title="A Star Is Born" class="text">A Star Is Born</span>
+								<span class="predictions-odds ">
+									13/2									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Roma" class="text">Roma</span>
+								<span class="predictions-odds ">
+									15/2									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Green Book" class="text">Green Book</span>
+								<span class="predictions-odds ">
+									8/1									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+						<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/oscars-nominations-2019/'">
+				<h4 title="Best Director">Best Director</h4>
+				<ul>
+												<li>
+								<span title="Alfonso Cuaron " class="text">Alfonso Cuaron </span>
+								<span class="predictions-odds ">
+									82/25									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Bradley Cooper " class="text">Bradley Cooper </span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Spike Lee " class="text">Spike Lee </span>
+								<span class="predictions-odds ">
+									11/2									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+						<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/oscars-nominations-2019/'">
+				<h4 title="Best Actress">Best Actress</h4>
+				<ul>
+												<li>
+								<span title="Lady Gaga " class="text">Lady Gaga </span>
+								<span class="predictions-odds ">
+									37/10									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Glenn Close " class="text">Glenn Close </span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Olivia Colman " class="text">Olivia Colman </span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+						<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/oscars-nominations-2019/'">
+				<h4 title="Best Actor">Best Actor</h4>
+				<ul>
+												<li>
+								<span title="Bradley Cooper " class="text">Bradley Cooper </span>
+								<span class="predictions-odds ">
+									37/10									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Christian Bale " class="text">Christian Bale </span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Viggo Mortensen " class="text">Viggo Mortensen </span>
+								<span class="predictions-odds ">
+									9/2									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+					<div class="slide slide-section" onclick="window.location='https://www.goldderby.com/odds/combined-odds/grammy-nominations-2019/'">
+			<h3 title="Grammy Nominations 2019">Grammy Nominations 2019</h3>
+			<h5>
+			Predictions			</h5>
+		</div>
+					<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/grammy-nominations-2019/'">
+				<h4 title="Album of the Year">Album of the Year</h4>
+				<ul>
+												<li>
+								<span title="Dirty Computer " class="text">Dirty Computer </span>
+								<span class="predictions-odds ">
+									6/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Everything is Love " class="text">Everything is Love </span>
+								<span class="predictions-odds ">
+									13/2									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Invasion of Privacy " class="text">Invasion of Privacy </span>
+								<span class="predictions-odds ">
+									15/2									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+						<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/grammy-nominations-2019/'">
+				<h4 title="New Artist">New Artist</h4>
+				<ul>
+												<li>
+								<span title="Dua Lipa" class="text">Dua Lipa</span>
+								<span class="predictions-odds ">
+									9/2									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Ella Mai" class="text">Ella Mai</span>
+								<span class="predictions-odds ">
+									5/1									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Troye Sivan" class="text">Troye Sivan</span>
+								<span class="predictions-odds ">
+									13/2									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+					<div class="slide slide-section" onclick="window.location='https://www.goldderby.com/odds/combined-odds/independent-spirit-awards-2019/'">
+			<h3 title="Independent Spirit Awards 2019">Independent Spirit Awards 2019</h3>
+			<h5>
+			Predictions			</h5>
+		</div>
+					<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/independent-spirit-awards-2019/'">
+				<h4 title="Best Picture">Best Picture</h4>
+				<ul>
+												<li>
+								<span title="If Beale Street Could Talk" class="text">If Beale Street Could Talk</span>
+								<span class="predictions-odds ">
+									10/3									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="First Reformed" class="text">First Reformed</span>
+								<span class="predictions-odds ">
+									19/5									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Leave No Trace" class="text">Leave No Trace</span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+					<div class="slide slide-section" onclick="window.location='https://www.goldderby.com/odds/combined-odds/golden-globes-film-2019/'">
+			<h3 title="Golden Globes Film 2019">Golden Globes Film 2019</h3>
+			<h5>
+			Predictions			</h5>
+		</div>
+					<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/golden-globes-film-2019/'">
+				<h4 title="Best Film Drama">Best Film Drama</h4>
+				<ul>
+												<li>
+								<span title="A Star Is Born" class="text">A Star Is Born</span>
+								<span class="predictions-odds ">
+									31/10									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="BlacKkKlansman" class="text">BlacKkKlansman</span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="If Beale Street Could Talk" class="text">If Beale Street Could Talk</span>
+								<span class="predictions-odds ">
+									4/1									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+					<div class="slide slide-section" onclick="window.location='https://www.goldderby.com/odds/combined-odds/sag-awards-film-nominations-2019/'">
+			<h3 title="SAG Awards Film Nominations 2019">SAG Awards Film Nominations 2019</h3>
+			<h5>
+			Predictions			</h5>
+		</div>
+					<div class="slide" onclick="window.location='https://www.goldderby.com/odds/combined-odds/sag-awards-film-nominations-2019/'">
+				<h4 title="Best Film Ensemble">Best Film Ensemble</h4>
+				<ul>
+												<li>
+								<span title="The Favourite" class="text">The Favourite</span>
+								<span class="predictions-odds ">
+									18/5									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="A Star Is Born" class="text">A Star Is Born</span>
+								<span class="predictions-odds ">
+									11/2									<i class="fa fa-arrow-down arrow-red" aria-hidden="true"></i>
+								</span>
+							</li>
+														<li>
+								<span title="Vice" class="text">Vice</span>
+								<span class="predictions-odds ">
+									11/2									<i class="fa fa-arrow-up arrow-green" aria-hidden="true"></i>
+								</span>
+							</li>
+											</ul>
+			</div>
+			</div>
+</section>			</div>
+			
+		<div class="header-ad">
+				<div class="admz" id="adm-leaderboard">
+					<div class="adma google-publisher" data-device="Desktop" data-width="728">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="div-gpt-gd-news-728x90-uid4" class="ad-rotatable adw-728 adh-90"></div>
+	</div>
+			</div>
+				</div>
+		</div>
+
+		
+		<div id="content" class="site-content">
+
+	<div id="content-wrapper" class="content-area sidebar-content white-background shadow-wrapper">
+		<main id="main" class="site-main white-background" role="main">
+
+		
+<article id="post-1202692301" class="post-1202692301 post type-post status-publish format-standard has-post-thumbnail hentry category-grammys category-music tag-fyc tag-grammy-awards tag-grammys">
+	<header class="entry-header">
+		<h1 class="entry-title">2019 Grammy nominations list: All the nominees for the 61st Grammy Awards [UPDATING LIVE]</h1>			<div class="entry-meta author-section">
+				<ul class="fl">
+					<span class="vcard author vcard-childs">
+						<span class="fn">
+										<li>
+							<div class="fl">
+					<a class="author-block" href="https://www.goldderby.com/author/paul-sheehan-1/" title="Paul Sheehan">
+						<img src="https://i1.wp.com/www.goldderby.com/wp-content/uploads/2016/04/paul-sheehan.jpg?resize=35%2C35&#038;ssl=1" alt="" width="35" height="35" />
+					</a>
+				</div>
+						<div class="fl ">
+				<a class="author-block" href="https://www.goldderby.com/author/paul-sheehan-1/" title="Paul Sheehan">
+					Paul Sheehan				</a>
+							</div>
+
+			</li>
+												</span>
+					</span>
+
+											<li class="vcard-category-if-no-twitter-handle">
+							<a href="https://www.goldderby.com/c/music/">Music</a>
+						</li>
+										</ul>
+				<ul class="fl">
+					<li class="vcard-if-no-twitter-handle">
+						<time itemprop="datePublished" datetime="2018-12-07T13:00:56+00:00" class="date updated published">
+							December 7, 2018 5:00AM						</time>
+					</li>
+				</ul>
+			</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+
+	<div class="entry-content margin-top">
+					<div class="d-all featured-image">
+				<img width="620" height="360" src="https://www.goldderby.com/wp-content/uploads/2017/12/grammy-statue.jpg?w=620&amp;h=360&amp;crop=1" class="attachment-main-image size-main-image wp-post-image" alt="grammy statue" />					<div class="featured-image-credit">CBS</div>
+								</div>
+					<div class="article-content">
+					<div class="share-group share-group-sticky">
+					<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;t=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D" target="_blank" class="share-item share-facebook" rel="nofollow"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;text=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D&#038;via=goldderby" target="_blank" class="share-item share-twitter" rel="nofollow"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;title=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D" target="_blank" class="share-item share-reddit" rel="nofollow"><i class="fa fa-reddit-alien"></i></a>
+						<a href="https://tumblr.com/share?s=&#038;v=3&#038;t=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D&#038;u=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F" target="_blank" class="share-item share-tumblr" rel="nofollow"><i class="fa fa-tumblr"></i></a>
+						<a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;description=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D" target="_blank" class="share-item share-pinterest" rel="nofollow"><i class="fa fa-pinterest"></i></a>
+						<a href="https://www.linkedin.com/shareArticle?mini=truemini=true&#038;url=https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;title=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D&#038;summary=Nominations+for+the+61st+Grammy+Awards+were+announced+by+the+recording+academy+on+Dec.+7+in+three+stages.+Nominees+in+the+top+four+general+field+categories+were+unveiled+on+%22CBS+This+Morning.%22+The+contenders+in+more+races+were+then+revealed+on+Apple+Music+before+the+complete+list+of+nominees+in+dozens+of+categories+was+posted+on+Grammy.com.+The&#038;source=Deadline" target="_blank" class="share-item share-linkedin" rel="nofollow"><i class="fa fa-linkedin"></i></a>
+						<a href="mailto:?subject=2019+Grammy+nominations+list%3A+All+the+nominees+for+the+61st+Grammy+Awards+%5BUPDATING+LIVE%5D&#038;body=Check+out+this+update+from+GoldDerby%3A+https%3A%2F%2Fwww.goldderby.com%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F" target="_blank" class="share-item share-email" rel="nofollow"><i class="fa fa-envelope"></i></a>
+					</div>
+		<p>Nominations for the 61st <a href="https://www.goldderby.com/t/grammy-awards/" id="auto-tag_grammy-awards" data-tag="grammy-awards">Grammy Awards</a> were announced by the recording academy on Dec. 7 in three stages. Nominees in the top four general field categories were unveiled on &#8220;CBS This Morning.&#8221; The contenders in more races were then revealed on Apple Music before the complete list of nominees in dozens of categories was posted on Grammy.com. The nominations announcement had been scheduled for Wednesday but was pushed back two days due to the scheduled memorial services for President <strong>George H.W. Bush</strong>.</p>
+<p>The four general field categories &#8212; Album of the Year, Record of the Year, Song of the Year, and Best New Artist &#8212; are the top prizes at the <a href="https://www.goldderby.com/t/grammys/" id="auto-tag_grammys" data-tag="grammys">Grammys</a>. While the nominees are drawn from across a variety of music genres, the winners tend to be the biggest pop and rock acts including recent champs&nbsp;<strong>Bruno Mars</strong>,&nbsp;<strong>Adele</strong>, <strong>Taylor Swift</strong>, and <strong>Mumford and Sons</strong>.</p>
+<p>	<div class="admz" id="adm-inline-article-ad-1">
+					<div class="adma google-publisher" data-device="Desktop" data-width="1">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-news-mid-article-uid0" class="ad-rotatable adw-1 adh-1"></div>
+	</div>
+			</div>
+				</div>
+</p>
+<p><strong>DISCUSS</strong> <a href="https://www.goldderby.com/forum/music/">All the Grammy nominations with music insiders in our red-hot forums</a></p>
+<p>This year&#8217;s winners will be revealed on Feb. 10 in a two-part ceremony at the Staples Center in Los Angeles. The majority of the awards in the 84 categories spread across 30 fields will be handed out in a non-televised&nbsp; event, the Premiere Ceremony, that afternoon.&nbsp;The televised portion of the <a href="http://www.goldderby.com/article/2017/2018-grammy-awards-how-are-nominees-and-winners-decided/">Grammys</a> will begin on CBS at 4:30 p.m. PT/7:30 p.m. ET. Expect that 3.5 hour telecast to be dominated by musical performances with about 10 presentations of prizes.</p>
+<p><strong>SEE</strong> <a href="http://www.goldderby.com/article/2018/2018-grammys-full-list-of-winners-60th-grammy-awards/">2018 Grammys: Full list of winners at the 60th Grammy Awards</a></p>
+<h3><span style="color: #993300;"><strong>GENERAL FIELD</strong></span></h3>
+<p><strong>Record Of The Year</strong><br />
+&ldquo;I Like It&rdquo; &mdash; Cardi B, Bad Bunny &amp; J Balvin<br />
+&ldquo;The Joke&rdquo; &mdash;&nbsp;<a id="related_article_link_brandi-carlile" href="https://variety.com/2018/music/news/joni-mitchell-tribute-concert-birthday-1203023647/" data-tag="brandi-carlile">Brandi Carlile</a><br />
+&ldquo;This Is America&rdquo; &mdash; Childish Gambino<br />
+&ldquo;God&rsquo;s Plan&rdquo; &mdash; Drake<br />
+&ldquo;Shallow&rdquo; &mdash; Lady Gaga &amp; Bradley Cooper<br />
+&ldquo;All The Stars&rdquo; &mdash; Kendrick Lamar &amp; SZA<br />
+&ldquo;Rockstar&rdquo; &mdash; Post Malone Featuring 21 Savage<br />
+&ldquo;The Middle&rdquo; &mdash; Zedd, Maren Morris &amp; Grey</p>
+<p><strong>Album Of The Year</strong><br />
+&ldquo;Invasion Of Privacy&rdquo; &mdash; Cardi B<br />
+&ldquo;By The Way, I Forgive You&rdquo; &mdash; Brandi Carlile<br />
+&ldquo;Scorpion&rdquo; &mdash; Drake<br />
+&ldquo;H.E.R.&rdquo; &mdash; H.E.R.<br />
+&ldquo;Beerbongs &amp; Bentleys&rdquo; &mdash; Post Malone<br />
+&ldquo;Dirty Computer&rdquo; &mdash; Janelle Mon&aacute;e<br />
+&ldquo;Golden Hour&rdquo; &mdash; Kacey Musgraves<br />
+&ldquo;Black Panther: The Album, Music From And Inspired By&rdquo; (Various Artists)</p>
+<p><strong>Song Of The Year<br /></strong>&#8220;All The Stars&#8221;&mdash; Kendrick Duckworth, Mark Spears, Al Shuckburgh, Anthony Tiffith and Solana Rowe</p>
+<p>&#8220;Boo&#8217;d Up&#8221;&mdash; Larrance Dopson, Joelle James, Ella Mai, and Dijon McFarlane</p>
+<p>&#8220;God&#8217;s Plan&#8221; &mdash; Aubrey Graham, Daveon Jackson, Brock Korsan, Ron Latour, Matthew Samuels and Noah Shebib.</p>
+<p>&#8220;In My Blood&#8221;&mdash; Teddy Geiger, Scott Harris, Shawn Mendes and Geoffrey Warburton</p>
+<p>&#8220;The Joke&#8221;&mdash; Brandi Carlile, Dave Cobb, Phil Hanseroth and Tim Hanseroth</p>
+<p>&#8220;The Middle&#8221;&mdash; Sarah Aarons, Jordan K. Johnson, Stefan Johnson, Marcus Lomax, Kyle Trewartha, Michael Trewartha and Anton Zaslavski</p>
+<p>&#8220;Shallow&#8221;&mdash; Lady Gaga, Mark Ronson, Anthony Rossomando and Andrew Wyatt</p>
+<p>&#8220;This Is America&#8221;&mdash; Donald Glover and Ludwig G&ouml;ransson</p>
+<p><strong>Best New Artist<br /></strong>Chloe x Halle<br />
+Luke Combs<br />
+Greta Van Fleet<br />
+H.E.R.<br />
+Dua Lipa<br />
+Margo Price<br />
+Bebe Rexha<br />
+Jorja Smith</p>
+<p><strong>SIGN UP&nbsp;</strong><a title="for Gold Derby&rsquo;s free newsletter with latest predictions" href="http://pages.email.goldderby.com/signup/" target="_self">for Gold Derby&rsquo;s free newsletter with latest predictions</a></p>
+<h3><span style="color: #993300;"><strong>COUNTRY FIELD</strong></span></h3>
+<p><strong>Best Country Solo Performance</strong><br />
+&ldquo;Wouldn&rsquo;t It Be Great?&rdquo;&nbsp;&mdash; Loretta Lynn<br />
+&ldquo;Mona Lisas And Mad Hatters&rdquo; &mdash; Maren Morris<br />
+&ldquo;Butterflies&rdquo; &mdash; Kacey Musgraves<br />
+&ldquo;Millionaire&rdquo; &mdash; Chris Stapleton<br />
+&ldquo;Parallel Line&rdquo; &mdash; Keith Urban</p>
+<p></p>
+<p><strong>Best Country Duo/Group Performance</strong><br />
+&ldquo;Shoot Me Straight&rdquo; &mdash; Brothers Osborne<br />
+&ldquo;Tequila&rdquo; &mdash; Dan + Shay<br />
+&rdquo; When Someone Stops Loving You&rdquo; &mdash; Little Big Town<br />
+&ldquo;Dear Hate&rdquo; &mdash; Maren Morris Featuring Vince Gill<br />
+&ldquo;Meant To Be&rdquo; &mdash; Bebe Rexha &amp; Florida Georgia Line</p>
+<p><strong>Best Country Album</strong><br />
+&ldquo;Unapologetically&rdquo; &mdash; Kelsea Ballerini<br />
+&ldquo;Port Saint Joe&rdquo; &mdash; Brothers Osborne<br />
+&ldquo;Girl Going Nowhere&rdquo; &mdash; Ashley McBryde<br />
+&ldquo;Golden Hour&rdquo; &mdash; Kacey Musgraves<br />
+&ldquo;From A Room: Volume 2&rdquo; &mdash; Chris Stapleton</p>
+<p><strong>Best Country Song</strong><br />
+&ldquo;Break Up In The End&rdquo; &mdash; Jessie Jo Dillon, Chase McGill &amp; Jon Nite, songwriters (Cole Swindell)</p>
+<p>&ldquo;Dear Hate&rdquo; &mdash; Tom Douglas, David Hodges &amp; Maren Morris,<br />
+Songwriters (Maren Morris Featuring Vince Gill)</p>
+<p>&ldquo;I Lived It&rdquo; &mdash; Rhett Akins, Ross Copperman, Ashley Gorley &amp; Ben<br />
+Hayslip, songwriters (Blake Shelton)</p>
+<p>&ldquo;Space Cowboy&rdquo; &mdash; Luke Laird, Shane McAnally &amp; Kacey Musgraves,<br />
+songwriters (Kacey Musgraves)</p>
+<p>&ldquo;Tequila&rdquo; &mdash; Nicolle Galyon, Jordan Reynolds &amp; Dan Smyers, songwriters (Dan + Shay)</p>
+<p>&ldquo;When Someone Stops Loving You&rdquo; &mdash; Hillary Lindsey, Chase McGill &amp; Lori McKenna, songwriters (Little Big Town)</p>
+<h3><span style="color: #993300;"><strong>POP FIELD</strong></span></h3>
+<p><strong>Best Pop Solo Performance</strong><br />
+&ldquo;Colors&rdquo; &mdash; Beck<br />
+&ldquo;Havana (Live)&rdquo; &mdash; Camila Cabello<br />
+&ldquo;God Is A Woman&rdquo; &mdash; Ariana Grande<br />
+&ldquo;Joanne (Where Do You Think You&rsquo;re Goin&rsquo;?)&rdquo; &mdash; Lady Gaga<br />
+&ldquo;Better Now&rdquo; &mdash; Post Malone</p>
+<p><strong>Best Pop Duo/Group Performance</strong><br />
+&ldquo;Fall In Line&rdquo; &mdash; Christina Aguilera Featuring Demi Lovato<br />
+&ldquo;Don&rsquo;t Go Breaking My Heart&rdquo; &mdash; Backstreet Boys<br />
+&ldquo;&lsquo;S Wonderful&rdquo; &mdash; Tony Bennett &amp; Diana Krall<br />
+&ldquo;Shallow&rdquo; &mdash; Lady Gaga &amp; Bradley Cooper<br />
+&ldquo;Girls I Like You&rdquo; &mdash; Maroon 5 Featuring Cardi B<br />
+&ldquo;Say Something&rdquo; &mdash; Justin Timberlake Featuring Chris Stapleton<br />
+&ldquo;The Middle&rdquo; &mdash; Zedd, Maren Morris &amp; Grey</p>
+<p><strong>Best Pop Vocal Album</strong><br />
+&ldquo;Camila&rdquo; &mdash; Camila Cabello<br />
+&ldquo;Meaning Of Life&rdquo; &mdash; Kelly Clarkson<br />
+&ldquo;Sweetener&rdquo; &mdash; Ariana Grande<br />
+&ldquo;Shawn Mendes&rdquo; &mdash; Shawn Mendes<br />
+&ldquo;Beautiful Trauma&rdquo; &mdash; P!nk<br />
+&ldquo;Reputation&rdquo; &mdash; Taylor Swift</p>
+<h3><span style="color: #993300;"><strong>TRADITIONAL POP FIELD</strong></span></h3>
+<p><strong>Best Traditional Pop Album</strong><br />
+&ldquo;Love Is Here To Stay&rdquo; &mdash; Tony Bennett &amp; Diana Krall<br />
+&ldquo;My Way&rdquo; &mdash; Willie Nelson<br />
+&ldquo;Nat &ldquo;King&rdquo; Cole &amp; Me&rdquo; &mdash; Gregory Porter<br />
+&#8220;Standards&#8221; &mdash; Seal<br />
+&#8220;The Music&#8230; The Mem&#8217;ries&#8230; The Magic!&#8221; &mdash; Barbra Streisand</p>
+<h3><span style="color: #993300;"><strong>R&amp;B FIELD</strong></span></h3>
+<p><strong>Best R&amp;B Performance</strong><br />
+&ldquo;Long As I Live&rdquo;&nbsp;&mdash; Toni Braxton<br />
+&ldquo;Summer&rdquo; &mdash; The Carters<br />
+&ldquo;Y O Y&rdquo;&nbsp;&mdash; Lalah Hathaway<br />
+&ldquo;Best Part&rdquo; &mdash; H.E.R. Featuring Daniel Caesar<br />
+&ldquo;First Began&rdquo; &mdash; PJ Morton</p>
+<p><strong>Best Traditional R&amp;B Performance</strong><br />
+&ldquo;Bet Ain&rsquo;t Worth The Hand&rdquo; &mdash; Leon Bridges<br />
+&ldquo;Don&rsquo;t Fall Apart On Me Tonight&rdquo;&nbsp;&mdash;&nbsp;Bettye LaVette<br />
+&ldquo;Honest&rdquo; &mdash; MAJOR.<br />
+&ldquo;How Deep Is Your Love&rdquo;&nbsp;&mdash; PJ Morton Featuring Yebba<br />
+&ldquo;Made For Love&rdquo; &mdash; Charlie Wilson Featuring Lalah Hathaway</p>
+<p><strong>Best Urban Contemporary Album</strong><br />
+&ldquo;Everything Is Love&rdquo; &mdash; The Carters<br />
+&ldquo;The Kids Are Alright &ldquo;&mdash; Chloe x Halle<br />
+&ldquo;Chris Dave And The Drumhedz&rdquo; &mdash; Chris Dave And The Drumhedz<br />
+&ldquo;War &amp; Leisure&rdquo; &mdash; Miguel<br />
+&ldquo;Ventriloquism&rdquo; &mdash; Meshell Ndegeocello</p>
+<p><strong>Best R&amp;B Album</strong><br />
+&ldquo;Sex &amp; Cigarettes&rdquo; &mdash; Toni Braxton<br />
+&ldquo;Good Thing&rdquo; &mdash; Leon Bridges<br />
+&ldquo;Honestly&rdquo; &mdash; Lalah Hathaway<br />
+&ldquo;H.E.R.&rdquo; &mdash; H.E.R.<br />
+&ldquo;Gumbo Unplugged (Live)&rdquo; &mdash; PJ Morton</p>
+<p><strong>Best R&amp;B Song<br /></strong>&ldquo;Boo&rsquo;d Up&rdquo; &mdash; Larrance Dopson, Joelle James, Ella Mai &amp; Dijon<br />
+McFarlane, songwriters (Ella Mai)</p>
+<p>&ldquo;Come Through And Chill&rdquo; &mdash; Jermaine Cole, Miguel Pimentel &amp; Salaam Remi, songwriters (Miguel Featuring J. Cole &amp; Salaam Remi)</p>
+<p>&ldquo;Feels Like Summer&rdquo; &mdash; Donald Glover &amp; Ludwig Goransson, songwriters (Childish Gambino)</p>
+<p>&ldquo;Focus&rdquo; &mdash;&nbsp;Darhyl Camper Jr, H.E.R. &amp; Justin Love, songwriters (H.E.R.)</p>
+<p>&ldquo;Long As I Live&rdquo; &mdash; Paul Boutin, Toni Braxton &amp; Antonio Dixon, songwriters (Toni Braxton)</p>
+<h3><span style="color: #993300;"><strong>RAP FIELD</strong></span></h3>
+<p><strong>Best Rap Performance</strong><br />
+&ldquo;Be Careful&rdquo; &mdash; Cardi B<br />
+&ldquo;Nice For What&rdquo; &mdash; Drake<br />
+&ldquo;King&rsquo;s Dead&rdquo; &mdash; Kendrick Lamar, Jay Rock, Future &amp; James Blake<br />
+&ldquo;Bubblin&rdquo; &mdash; Anderson .Paak<br />
+&ldquo;Sicko Mode&rdquo; &mdash; Travis Scott, Drake, Big Hawk &amp; Swae Lee</p>
+<p><strong>Best Rap/Sung Performance</strong><br />
+&ldquo;Like I Do&rdquo; &mdash; Christina Aguilera Featuring Goldlink<br />
+&ldquo;Pretty Little Fears&rdquo; &mdash; 6LACK Featuring J. Cole<br />
+&ldquo;This Is America&rdquo; &mdash; Childish Gambino<br />
+&ldquo;All The Stars&rdquo; &mdash; Kendrick Lamar &amp; SZA<br />
+&ldquo;Rockstar&rdquo; &mdash; Post Malone Featuring 21 Savage</p>
+<p><strong>Best Rap Album</strong><br />
+&ldquo;Invasion Of Privacy&rdquo; &mdash; Cardi B<br />
+&ldquo;Swimming&rdquo; &mdash; Mac Miller<br />
+&ldquo;Victory Lap&rdquo; &mdash; Nipsey Hussle<br />
+&ldquo;Daytona&rdquo; &mdash; Pusha T<br />
+&ldquo;Astroworld&rdquo; &mdash; Travis Scott</p>
+<p><strong>Best Rap Song</strong><br />
+&ldquo;God&rsquo;s Plan&rdquo; &mdash; Aubrey Graham, Daveon Jackson, Brock Korsan, Ron<br />
+LaTour, Matthew Samuels &amp; Noah Shebib, songwriters (Drake)</p>
+<p>&ldquo;King&rsquo;s Dead&rdquo; &mdash;&nbsp;Kendrick Duckworth, Samuel Gloade, James Litherland, Johnny McKinzie, Mark Spears, Travis Walton, Nayvadius Wilburn &amp; Michael Williams II, songwriters (Kendrick Lamar, Jay Rock, Future &amp;<br />
+James Blake)</p>
+<p>&ldquo;Lucky You&rdquo; &mdash; R. Fraser, G. Lucas, M. Mathers, M. Samuels &amp; J.<br />
+Sweet, songwriters (Eminem Featuring Joyner Lucas)</p>
+<p>&ldquo;Sicko Mode&rdquo; &mdash; Khalif Brown, Rog&eacute;t Chahayed, BryTavious Chambers, Mike Dean, Mirsad Dervic, Kevin Gomringer, Tim Gomringer, Aubrey Graham, John Edward Hawkins, Chauncey Hollis, Jacques Webster, Ozan Yildirim &amp; Cydel Young, songwriters (Travis Scott, Drake, Big Hawk &amp; Swae Lee)</p>
+<p>&ldquo;Win&rdquo; &mdash; K. Duckworth, A. Hernandez, J. McKinzie, M. Samuels<br />
+&amp; C. Thompson, songwriters (Jay Rock)</p>
+<h3><span style="color: #993300;"><strong>ROCK FIELD</strong></span></h3>
+<p><strong>Best Rock Performance</strong><br />
+&ldquo;Four Out Of Five&rdquo; &mdash;Arctic Monkeys<br />
+&ldquo;When Bad Does Good&rdquo; &mdash; Chris Cornell<br />
+&ldquo;Made An America&rdquo; &mdash; The Fever 333<br />
+&ldquo;Highway Tune&rdquo; &mdash; Greta Van Fleet<br />
+&ldquo;Uncomfortable&rdquo; &mdash; Halestorm</p>
+<p><strong>Best Metal Performance</strong><br />
+&ldquo;Condemned To The Gallows &ldquo;&mdash; Between The Buried And Me<br />
+&ldquo;Honeycomb&rdquo;&nbsp;&mdash; Deafheaven<br />
+&ldquo;Electric Messiah&rdquo; &mdash; High On Fire<br />
+&ldquo;Betrayer&rdquo; &mdash; Trivium<br />
+&ldquo;On My Teeth &mdash; Underoath</p>
+<p><strong>Best Rock Album</strong><br />
+&ldquo;Rainier Fog&rdquo; &mdash; Alice In Chains<br />
+&ldquo;M A N I A&rdquo; &mdash; Fall Out Boy<br />
+&ldquo;Prequelle &mdash; Ghost<br />
+&ldquo;From The Fires&rdquo;&nbsp;&mdash; Greta Van Fleet<br />
+&ldquo;Pacific Daydream&rdquo;&nbsp;&mdash; Weezer</p>
+<p><strong>Best Rock Song<br /></strong>&#8220;Black Smoke Rising&#8221; &mdash; Jacob Thomas Kiszka, Joshua Michael Kiszka, Samuel Francis Kiszka &amp; Daniel Robert Wagner, songwriters (Greta Van Fleet)</p>
+<p>&#8220;Jumpsuit&#8221; &mdash; Tyler Joseph, songwriter (Twenty One Pilots)</p>
+<p>&#8220;MANTRA&#8221; &mdash; Jordan Fish, Matthew Kean, Lee Malia, Matthew Nicholls &amp; Oliver Sykes, songwriters (Bring Me The Horizon)</p>
+<p>&#8220;Masseduction&#8221; &mdash; Jack Antonoff &amp; Annie Clark, songwriters (St. Vincent)</p>
+<p>&#8220;Rats&#8221; &mdash; Tom Dalgety &amp; A Ghoul Writer, songwriters (Ghost)</p>
+<h3><span style="color: #993300;"><strong>ALTERNATIVE FIELD</strong></span></h3>
+<p><strong>Best Alternative Album</strong><br />
+&ldquo;Tranquility Base Hotel + Casino&rdquo; &mdash;Arctic Monkeys<br />
+&ldquo;Colors&rdquo;&nbsp;&mdash; Beck<br />
+&ldquo;Utopia&rdquo;&nbsp;&mdash; Bj&ouml;rk<br />
+&ldquo;American Utopia&rdquo; &mdash; David Byrne<br />
+&ldquo;Masseduction&rdquo;&nbsp;&mdash; St. Vincent</p>
+<h3><span style="color: #993300;"><strong>AMERICAN ROOTS MUSIC FIELD</strong></span></h3>
+<p><strong>Best Americana Album</strong><br />
+&ldquo;By The Way, I Forgive You&rdquo; &mdash; Brandi Carlile<br />
+&ldquo;Things Have Changed&rdquo; &mdash; Bettye LaVette<br />
+&ldquo;The Tree Of Forgiveness&rdquo; &mdash; John Prine<br />
+&ldquo;The Lonely, The Lonesome &amp; The Gone&rdquo; &mdash; Lee Ann Womack<br />
+&ldquo;One Drop Of Truth&rdquo; &mdash; The Wood Brothers</p>
+<p><strong>Best Bluegrass Album</strong><br />
+&ldquo;Portraits in Fiddles&rdquo;&nbsp;&mdash; Mike Barnett<br />
+&ldquo;Sister Sadie II&rdquo;&nbsp;&mdash; Sister Sadie<br />
+&ldquo;Rivers and Roads&rdquo; &mdash; Special Consensus<br />
+&ldquo;The Travelin&rsquo; McCourys&rdquo;&nbsp;&mdash; The Travelin&rsquo; McCourys<br />
+&ldquo;North of Despair&rdquo;&nbsp;&mdash; Wood &amp; Wire</p>
+<p><strong>Best Traditional Blues Album</strong><br />
+&ldquo;Something Smells Funky &lsquo;Round Here&rdquo;&nbsp;&mdash; Elvin Bishop&rsquo;s Big Fun Trio<br />
+&ldquo;Benton County Relic&rdquo;&nbsp;&mdash; Cedric Burnside<br />
+&ldquo;The Blues Is Alive and Well&rdquo;&nbsp;&mdash; Buddy Guy<br />
+&ldquo;No Mercy in This Land&rdquo;&nbsp;&mdash; Ben Harper And Charlie Musselwhite<br />
+&ldquo;Don&rsquo;t You Feel My Leg (The Naughty Bawdy Blues of Blue Lu Barker)&nbsp;&mdash; Maria Muldaur</p>
+<p><strong>Best Contemporary Blues Album</strong><br />
+&ldquo;Please Don&rsquo;t Be Dead&rdquo;&nbsp;&mdash; Fantastic Negrito<br />
+&ldquo;Here In Babylon&rdquo;&nbsp;&mdash; Teresa James And The Rhythm Tramps<br />
+&ldquo;Cry No More&rdquo;&nbsp;&mdash; Danielle Nicole<br />
+&ldquo;Out of The Blues&rdquo;&nbsp;&mdash; Boz Scaggs<br />
+&ldquo;Victor Wainwright and The Train&rdquo;&nbsp;&mdash; Victor Wainwright And The Train</p>
+<p><strong>Best Folk Album</strong><br />
+&ldquo;Whistle Down the Wind&rdquo; &mdash; Joan Baez<br />
+&ldquo;Black Cowboys&rdquo;&nbsp;&mdash; Dom Flemons<br />
+&ldquo;Rifles &amp; Rosary Beads&rdquo;&nbsp;&mdash; Mary Gauthier<br />
+&ldquo;Weed Garden&rdquo;&nbsp;&mdash; Iron &amp; Wine<br />
+&ldquo;All Ashore&rdquo;&nbsp;&mdash; Punch Brothers</p>
+<p><strong>Best Regional Roots Music Album</strong><br />
+&ldquo;Kreole Rock and Soul&rdquo;&nbsp;&mdash; Sean Ardoin<br />
+&ldquo;Spyboy&rdquo;&nbsp;&mdash; Cha Wa<br />
+&ldquo;Aloha From Na Hoa&rdquo;&nbsp;&mdash; Na Hoa<br />
+&ldquo;No &lsquo;Ane&rsquo;i&rdquo;&nbsp;&mdash; Kalani Pe&rsquo;a<br />
+&ldquo;Mewasinsational &ndash; Cree Round Dance Songs&rdquo;&nbsp;&mdash; Young Spirit</p>
+<p><strong>Best American Roots Performance</strong><br />
+&ldquo;Kick Rocks&rdquo; &mdash; Sean Ardoin<br />
+&ldquo;Saint James Infirmary Blues&rdquo;&nbsp;&mdash; Jon Batiste<br />
+&ldquo;The Joke&rdquo;&nbsp; Brandi Carlile<br />
+&ldquo;All On My Mind&rdquo;&nbsp;&mdash; Anderson East<br />
+&ldquo;Last Man Standing&rdquo; &mdash; Willie Nelson</p>
+<p><strong>Best American Roots Song</strong><br />
+&ldquo;All The Trouble&rdquo;&nbsp;&mdash; Waylon Payne, Lee Ann Womack &amp; Adam Wright, songwriters (Lee Ann Womack)</p>
+<p>&ldquo;Build a Bridge&rdquo;&nbsp;&mdash; Jeff Tweedy, songwriter (Mavis Staples)</p>
+<p>&ldquo;The Joke&rdquo;&nbsp;&mdash;&nbsp;Brandi Carlile, Dave Cobb, Phil Hanseroth &amp; Tim Hanseroth, songwriters (Brandi Carlile)</p>
+<p>&ldquo;Knockin&rsquo; On Your Screen Door&rdquo; &mdash; Pat McLaughlin &amp; John Prine, songwriters (John Prine)</p>
+<p>&ldquo;Summer&rsquo;s End&rdquo; &mdash; Pat McLaughlin &amp; John Prine, songwriters (John Prine)</p>
+<h3><span style="color: #993300;"><strong>CHILDREN&#8217;S FIELD</strong></span></h3>
+<p><strong>Best Children&rsquo;s Album</strong><br />
+&ldquo;All The Sounds&rdquo;&nbsp;&mdash; Lucy Kalantari &amp; The Jazz Cats<br />
+&ldquo;Building Blocks&rdquo; &mdash; Tim Kubart<br />
+&ldquo;Falu&rsquo;s Bazaar&rdquo; &mdash; Falu<br />
+&ldquo;Giants of Science&rdquo;&nbsp;&mdash; The Pop Ups<br />
+&ldquo;The Nation of Imagine&rdquo;&nbsp;&mdash; Frank &amp; Deane</p>
+<h3><span style="color: #993300;">COMEDY FIELD</span></h3>
+<p><strong>Best Comedy Album</strong><br />
+Annihilation, Patton Oswalt<br />
+Equanimity &amp; The Bird Revelation, Dave Chappelle<br />
+Noble Ape, Jim Gaffigan<br />
+Standup For Drummers, Fred Armisen<br />
+Tamborine, Chris Rock</p>
+<h3><span style="color: #993300;"><strong>CONTEMPORARY INSTRUMENTAL FIELD</strong></span></h3>
+<p><strong>Best Contemporary Instrumental Album</strong><br />
+The Emancipation Procrastination,&nbsp;Christian Scott aTunde Adjuah<br />
+Steve Gadd Band,&nbsp;Steve Gadd Band<br />
+Modern Lore, Julian Lage<br />
+Laid Black, Marcus Miller<br />
+Protocol 4, Simon Phillips</p>
+<h3><span style="color: #993300;"><strong>DANCE/ELECTRONIC MUSIC FIELD</strong></span></h3>
+<p><strong>Best Dance Recording</strong><br />
+&ldquo;Northern Soul&rdquo; &mdash; Above &amp; Beyond Featuring Richard Bedford<br />
+&ldquo;Ultimatum&rdquo; &mdash; Disclosure (Featuring Fatoumata Diawara)<br />
+&ldquo;Losing It&rdquo; &mdash; Fisher<br />
+&ldquo;Electricity&rdquo; &mdash; Silk City &amp; Dua Lipa Featuring Diplo &amp; Mark Ronson<br />
+&ldquo;Ghost Voices&rdquo; &mdash; Virtual Self</p>
+<p><strong>Best Dance/Electronic Album</strong><br />
+&ldquo;Singularity&rdquo; &mdash;Jon Hopkins<br />
+&ldquo;Woman Worldwide&rdquo; &mdash; Justice<br />
+&ldquo;Treehouse&rdquo; &mdash; Sofi Tukker<br />
+&ldquo;Oil of Every Pearl&rsquo;s Un-Insides&rdquo; &mdash; SOPHIE<br />
+&ldquo;Lune Rouge&rdquo; &mdash; TOKiMONSTA</p>
+<h3><span style="color: #993300;"><strong>GOSPEL/CONTEMPORARY CHRISTIAN MUSIC FIELD</strong></span></h3>
+<p><strong>Best Gospel Album</strong><br />
+&ldquo;One Nation Under God&rdquo; &mdash; Jekalyn Carr<br />
+&ldquo;Hiding Place&rdquo; &mdash; Tori Kelly<br />
+&ldquo;Make Room&rdquo; &mdash; Jonathan McReynolds<br />
+&ldquo;The Other Side&rdquo; &mdash; The Walls Group<br />
+&ldquo;A Great Work&rdquo; &mdash; Brian Courtney Wilson</p>
+<p><strong>Best Contemporary Christian Music Album</strong><br />
+&ldquo;Look Up Child&rdquo; &mdash; Lauren Daigle<br />
+&ldquo;Hallelujah Here Below&rdquo; &mdash; Elevation Worship<br />
+&ldquo;Living With a Fire&rdquo;&nbsp;&mdash; Jesus Culture<br />
+&ldquo;Surrounded&rdquo;&nbsp;&mdash; Michael W. Smith<br />
+&ldquo;Survivor: Live From Harding Prison&rdquo;&nbsp;&mdash; Zach Williams</p>
+<p><strong>Best Roots Gospel Album</strong><br />
+&ldquo;Unexpected&rdquo;&nbsp;&mdash; Jason Crabb<br />
+&ldquo;Clear Skies&rdquo;&nbsp;&mdash; Ernie Haase &amp; Signature Sound<br />
+&ldquo;Favorites: Revisited By Request&rdquo; &mdash; The Isaacs<br />
+&ldquo;Still Standing&rdquo; &mdash; The Martins<br />
+&ldquo;Love Love Love&rdquo;&nbsp;&mdash; Gordon Mote</p>
+<p><strong>Best Gospel Performance/Song</strong><br />
+&ldquo;You Will Win&rdquo;&nbsp;&mdash; Jekalyn Carr; Allen Carr &amp; Jekalyn Carr, Songwriters</p>
+<p>&ldquo;Won&rsquo;t He Do It&rdquo;&nbsp;&mdash; Koryn Hawthorne</p>
+<p>&ldquo;Never Alone&rdquo; &mdash; Tori Kelly Featuring Kirk Franklin; Kirk Franklin &amp;&nbsp;Victoria Kelly, Songwriters</p>
+<p>&ldquo;Cycles&rdquo; Jonathan Mcreynolds Featuring Doe; Jonathan&nbsp;McReynolds, Songwriter</p>
+<p>&ldquo;A Great Work&rdquo; &mdash; Brian Courtney Wilson; Aaron W. Lindsey, Alvin&nbsp;Richardson &amp; Brian Courtney Wilson, Songwriters</p>
+<p><strong>Best Contemporary Christian Music Performance/Song</strong><br />
+&ldquo;Reckless Love&rdquo;&nbsp;&mdash;&nbsp;Cory Asbury; Cory Asbury, Caleb Culver &amp; Ran Jackson, songwriters</p>
+<p>&ldquo;You Say&rdquo;&nbsp;&mdash;&nbsp;Lauren Daigle; Lauren Daigle, Jason Ingram &amp; Paul Mabury, songwriters</p>
+<p>&ldquo;Joy&rdquo;&nbsp;&mdash;&nbsp;for King &amp; Country; Ben Glover, Matt Hales, Stephen Blake Kanicka, Seth Moslely, Joel Smallbone, Luke Smallbone &amp; Tedd Tjornhom, songwriters</p>
+<p>&ldquo;Grace Got You&rdquo;&nbsp;&mdash;&nbsp;MercyMe Featuring John Reuben; David Garcia, Ben Glover, MercyMe, Solomon Olds &amp; John Reuben, songwriters</p>
+<p>&ldquo;Known&rdquo;&mdash;&nbsp;Tauren Wells; Ethan Hulse, Jordan Sapp &amp; Tauren<br />
+Wells, songwriters</p>
+<p><span style="color: #993300;"><strong>JAZZ FIELD</strong></span></p>
+<p><strong>Best Improvised Jazz Solo</strong><br />
+&ldquo;Some Of That Sunshine&rdquo; &mdash; Regina Carter, soloist<br />
+&ldquo;Don&rsquo;t Fence Me In&rdquo; &mdash; John Daversa, soloist<br />
+&ldquo;We See&rdquo; &mdash; Fred Hersch, soloists<br />
+&ldquo;De-dah&rdquo; &mdash; Brad Mehldau, soloist<br />
+&ldquo;Cadenas&rdquo; &mdash; Miguel Zen&oacute;n, soloist</p>
+<p><strong>Best Jazz Vocal Album</strong><br />
+&ldquo;My Mood Is You&rdquo; &mdash; Freddy Cole<br />
+&ldquo;The Questions&rdquo; &mdash; Kurt Elling<br />
+&ldquo;The Subject Tonight Is Love&rdquo; &mdash; Kate McGarry With Keith Ganz &amp; Gary Versace<br />
+&ldquo;If You Really Want&rdquo; &mdash; Raul Mid&oacute;n With The Metropole Orkest Conducted By Vince Mendoza<br />
+&ldquo;The Window&rdquo; &mdash; C&eacute;cile McLorin Salvant</p>
+<p><strong>Best Jazz Instrumental Album</strong><br />
+&ldquo;Diamond Cut&rdquo;&nbsp;&mdash; Tia Fuller<br />
+&ldquo;Live In Europe&rdquo;&nbsp;&mdash; Fred Hersch Trio<br />
+&ldquo;Seymour Reads The Constitution!&rdquo; &mdash; Brad Mehldau Trio<br />
+&ldquo;Still Dreaming&rdquo; &mdash; Joshua Redman, Ron Miles, Scott Colley &amp; Brian Blade<br />
+&ldquo;Emanon&rdquo; &mdash; The Wayne Shorter Quartet</p>
+<p><strong>Best Large Jazz Ensemble Album</strong><br />
+&ldquo;All About That Basie&rdquo; &mdash;&nbsp;The Count Basie Orchestra Directed By Scotty<br />
+Barnhart<br />
+&ldquo;American Dreamers: Voices Of Hope, Music Of Freedom&rdquo; &mdash; John Daversa Big Band Featuring DACA Artists<br />
+&ldquo;Presence&rdquo; &mdash;&nbsp;Orrin Evans And The Captain Black Big Band<br />
+&ldquo;All Can Work&rdquo; &mdash; John Hollenbeck Large Ensemble<br />
+&ldquo;Barefoot Dances And Other Visions&rdquo; &mdash;&nbsp; Jim McNeely &amp; The Frankfurt Radio Big Band</p>
+<p><strong>Best Latin Jazz Album</strong><br />
+&ldquo;Heart Of Brazil&rdquo;&mdash; Eddie Daniels<br />
+&ldquo;Back To The Sunset&rdquo;&mdash; Dafnis Prieto Big Band<br />
+&ldquo;West Side Story Reimagined&rdquo;&mdash; Bobby Sanabria Multiverse Big Band<br />
+&ldquo;Cinque&rdquo;&mdash; Elio Villafranca<br />
+&ldquo;Yo Soy La Tradici&oacute;n&rdquo; &mdash; Miguel Zen&oacute;n Featuring Spektral Quartet</p>
+<h3><span style="color: #993300;"><strong>LATIN FIELD</strong></span></h3>
+<p><strong>Best Latin Pop Album</strong><br />
+&ldquo;Prometo&rdquo; &mdash; Pablo Alboran<br />
+&ldquo;Sincera&rdquo; &mdash; Claudia Brant<br />
+&ldquo;Musas (Un Homenaje Al Folclore Latinoamericano En Manos De Los Macorinos), Vol. 2&rdquo; &mdash; Natalia Lafourcade<br />
+&ldquo;2:00 AM&rdquo; &mdash; Raquel Sof&iacute;a<br />
+&ldquo;Vives&rdquo; &mdash; Carlos Vives</p>
+<p><strong>Best Latin Rock, Urban or Alternative Album</strong><br />
+&ldquo;Clairoscura&rdquo;&nbsp;&mdash; Aterciopelados<br />
+&ldquo;Coastcity&rdquo;&nbsp;&mdash; Coastcity<br />
+&ldquo;Encanto Tropical&rdquo;&nbsp;&mdash; Monsieur Perin&eacute;<br />
+&ldquo;Gourmet&rdquo;&nbsp;&mdash; Orishas<br />
+&ldquo;Aztl&aacute;n&rdquo; &mdash; Zo&eacute;</p>
+<p><strong>Best Regional Mexican Music Album (Including Tejano)</strong><br />
+&ldquo;Primero Soy Mexicana&rdquo;&nbsp;&mdash; Angela Aguilar<br />
+&ldquo;Mitad y Mitad&rdquo; &mdash; Calibre 50<br />
+&ldquo;Totalmente Juan Gabriel Vol. II&rdquo;&nbsp;&mdash;&nbsp;Aida Cuevas<br />
+&ldquo;Cruzando Borders&rdquo;&nbsp;&mdash; Los Texmaniacs<br />
+&ldquo;Leyendas De Mi Pueblo&rdquo;&nbsp;&mdash; Mariachi Sol De Mexico De Jose Hernandez<br />
+&ldquo;&iexcl;M&eacute;xico Por Siempre!&rdquo;&nbsp;&mdash; Luis Miguel</p>
+<p><strong>Best Tropical Latin Album</strong><br />
+&ldquo;Pa&rsquo; Mi Gente&rdquo; &mdash; Charlie Aponte<br />
+&ldquo;Legado&rdquo; &mdash; Formell Y Los Van Van<br />
+&ldquo;Orquesta Akok&aacute;n&rdquo;&nbsp;&mdash; Orquesta Akok&aacute;n<br />
+&ldquo;Ponle Actitud&rdquo;&nbsp;&mdash; Felipe Pel&aacute;ez<br />
+&ldquo;Anniversary&rdquo; &mdash; Spanish Harlem Orchestra</p>
+<h3><span style="color: #993300;"><strong>MUSICAL THEATRE FIELD</strong></span></h3>
+<p>&ldquo;The Band&rsquo;s Visit&rdquo;<br />
+Etai Benson, Adam Kantor, Katrina Lenk &amp; Ari&rsquo;el Stachel, principal soloists<br />
+Dean Sharenow &amp; David Yazbek, producers<br />
+(David Yazbek, composer &amp; lyricist)<br />
+(Original Broadway Cast)</p>
+<p>&ldquo;Carousel&#8221;<br />
+Renee Fleming, Alexander Gemignani, Joshua Henry, Lindsay Mendez &amp; Jessie Mueller, principal soloists;<br />
+Steven Epstein, producer<br />
+(Richard Rodgers, composer; Oscar Hammerstein II, lyricist)<br />
+(2018 Broadway Cast)</p>
+<p>&ldquo;Jesus Christ Superstar Live in Concert&rdquo; &mdash; Sara Bareilles, Alice Cooper, Ben Daniels, Brandon Victor Dixon, Erik Gr&ouml;nwall, Jin Ha, John Legend, Norm Lewis &amp; Jason Tam, principal soloists<br />
+Harvey<br />
+Mason, Jr., producer<br />
+(Andrew Lloyd-Webber, composer; Tim Rice, lyricist)<br />
+(Original Television Cast)</p>
+<p>&ldquo;My Fair Lady&rdquo;<br />
+Lauren Ambrose, Norbert Leo Butz &amp; Harry Hadden-Paton, principal soloists<br />
+Andre Bishop, Van Dean, Hattie K. Jutagir, David Lai, Adam Siegel &amp; Ted Sperling, producers (Frederick Loewe, composer; Alan Jay Lerner, lyricist)<br />
+(2018 Broadway Cast)</p>
+<p>&ldquo;Once On This Island&rdquo;<br />
+Phillip Boykin, Merle Dandridge, Quentin Earl Darrington, Hailey Kilgore, Kenita R. Miller, Alex Newell, Isaac Powell &amp; Lea Salonga, principal soloists;<br />
+Lynn Ahrens, Hunter Arnold, Ken Davenport, Stephen Flaherty &amp; Elliot Scheiner, producers<br />
+(Stephen Flaherty, composer; Lynn Ahrens, lyricist)<br />
+(New Broadway Cast)</p>
+<h3><span style="color: #993300;"><strong>MUSIC VIDEO FIELD</strong></span></h3>
+<p><strong>Best Music Video</strong><br />
+&ldquo;Apesh*t,&rdquo; The Carters<br />
+&ldquo;This Is America,&rdquo; Childish Gambino<br />
+&ldquo;I&rsquo;m Not Racist,&rdquo; Joyner Lucas<br />
+&ldquo;Pynk,&rdquo; Janelle Monae<br />
+&ldquo;Mumbo Jumbo,&rdquo; Tierra Whack</p>
+<p><strong>Best Music Film&nbsp;</strong><br />
+Life in 12 Bars<br />
+Whitney<br />
+Quincy<br />
+Itzhak<br />
+The King</p>
+<h3><span style="color: #993300;">NEW AGE FIELD</span></h3>
+<p><strong>Best New Age Album</strong><br />
+&ldquo;Hiraeth&rdquo; &mdash; Lisa Gerrard &amp; David Kuckhemann<br />
+&ldquo;Beloved&rdquo; &mdash; Snatam Kaur<br />
+&ldquo;Opium Moon&rdquo; &mdash; Opium Moon<br />
+&ldquo;Molecules Of Motion&rdquo; &mdash; Steve Roach<br />
+&ldquo;Moku Maluhia &ndash; Peaceful Island&rdquo;&nbsp;&mdash; Jim Kimo West</p>
+<h3><span style="color: #993300;"><strong>REGGAE FIELD</strong></span></h3>
+<p><strong>Best Reggae Album</strong><br />
+&ldquo;As The World Turns&rdquo; &mdash; Black Uhuru<br />
+&ldquo;Reggae Forever&rdquo;&nbsp;&mdash; Etana<br />
+&ldquo;Rebellion Rises&rdquo;&nbsp;&mdash; Ziggy Marley<br />
+&ldquo;A Matter of Time&rdquo;&nbsp;&mdash; Protoje<br />
+&ldquo;44/876&rdquo; &mdash; Sting &amp; Shaggy</p>
+<h3><span style="color: #993300;"><strong>SPOKEN WORD FIELD</strong></span></h3>
+<p><strong>Best Spoken Word Album (Includes Poetry, Audio Books &amp; Storytelling)</strong><br />
+&ldquo;Accessory to War (Neil Degrasse Tyson &amp; Avis Lang)&rdquo;&nbsp;&nbsp;&mdash; Courtney B. Vance<br />
+&ldquo;Calypso&rdquo;&nbsp;&nbsp;&mdash; David Sedaris<br />
+&ldquo;Creative Quest&rdquo;&nbsp;&mdash; Questlove<br />
+&ldquo;Faith &ndash; A Journey For All&rdquo;&nbsp;&mdash; Jimmy Carter<br />
+&ldquo;The Last Black Unicorn&rdquo;&nbsp;&mdash; Tiffany Haddish</p>
+<h3><span style="color: #993300;"><strong>WORLD MUSIC FIELD</strong></span></h3>
+<p><strong>Best World Music Album</strong><br />
+&ldquo;Deran&rdquo;&nbsp;&mdash; Bombino<br />
+&ldquo;Fenfo&rdquo; &mdash; Fatoumata Diawara<br />
+&ldquo;Black Times&rdquo;&nbsp;&mdash; Seun Kuti &amp; Egypt 80<br />
+&ldquo;Freedom&rdquo;&nbsp;&mdash; Soweto Gospel Choir<br />
+&ldquo;The Lost Songs of World War II&rdquo;&nbsp;&mdash; Yiddish Glory</p>
+<h3><span style="color: #993300;"><strong>VISUAL MEDIA FIELD</strong></span></h3>
+<p><strong>Best Compilation Soundtrack For Visual Media</strong><br />
+&ldquo;Call Me By Your Name&rdquo; &mdash; (Various Artists)<br />
+&ldquo;Deadpool 2&rdquo;&nbsp;&mdash;&nbsp;(Various Artists)<br />
+&ldquo;The Greatest Showman&rdquo;&nbsp;&mdash; (Various Artists)<br />
+&ldquo;Lady Bird&rdquo;&nbsp;&mdash; (Various Artists)<br />
+&ldquo;Stranger Things&rdquo;&nbsp;&mdash; (Various Artists)</p>
+<p><strong>Best Score Soundtrack For Visual Media</strong><br />
+&ldquo;Black Panther&rdquo;&nbsp;&mdash; Ludwig G&ouml;ransson, composer<br />
+&ldquo;Blade Runner 2049&rdquo;&nbsp;&mdash; Benjamin Wallfisch &amp; Hans Zimmer, composers<br />
+&ldquo;Coco&rdquo; &mdash; Michael Giacchino, composer<br />
+&ldquo;The Shape of Water&rdquo; &mdash; Alexandre Desplat, composer<br />
+&ldquo;Star Wars: The Last Jedi&rdquo;&nbsp;&mdash; John Williams, composer</p>
+<p><strong>Best Song Written For Visual Media<br /></strong>&#8220;All The Stars&#8221; &mdash; Kendrick Duckworth, Sol&aacute;na Rowe, Alexander William Shuckburgh, Mark Anthony Spears &amp; Anthony Tiffith, songwriters (Kendrick Lamar &amp; SZA), Track from: Black Panther</p>
+<p>&#8220;Mystery Of Love&#8221; &mdash; Sufjan Stevens, songwriter (Sufjan Stevens), Track from: Call Me By Your Name</p>
+<p>&#8220;Remember Me&#8221; &mdash; Kristen Anderson-Lopez &amp; Robert Lopez, songwriters (Miguel Featuring Natalia Lafourcade), Track from: Coco</p>
+<p>&#8220;Shallow&#8221; &mdash; Lady Gaga, Mark Ronson, Anthony Rossomando &amp; Andrew Wyatt, songwriters (Lady Gaga &amp; Bradley Cooper), Track from: A Star Is Born</p>
+<p>&#8220;This Is Me&#8221; &mdash; Benj Pasek &amp; Justin Paul, songwriters (Keala Settle &amp; The Greatest Showman Ensemble), Track from: The Greatest Showman</p>
+<h3><span style="color: #993300;"><strong>PRODUCTION, NON-CLASSICAL FIELD </strong></span></h3>
+<p><strong>Producer Of The Year,&nbsp;Non-Classical</strong><br />
+Boi-1da<br />
+Larry Klein<br />
+Linda Perry<br />
+Kanye West<br />
+Pharrell Williams</p>
+		</div><!-- .article-content -->
+				<div class="second-linked-gallery-container">
+					</div>
+	</div><!-- .entry-content -->
+
+</article><!-- #post-## -->
+			<div class="margin-bottom">
+					<div class="admz" id="adm-belt-1">
+					<div class="adma google-publisher" data-device="Desktop" data-width="620">
+				
+<div class="pmc-adm-goog-pub-div ad-text">
+	<div id="div-gpt-gd-news-620x250-uid5" class="ad-rotatable adw-620 adh-250"></div>
+	</div>
+			</div>
+				</div>
+			</div>
+
+							<div id="article-comments-container" data-post-id="1202692301"></div>
+						<div>
+				<interaction data-token="57e3c8d3203aa70102c53b2d" data-context="true" data-tags="" data-fallback="true"></interaction>
+			</div>
+			<div class="margin-bottom">
+					<div class="admz" id="adm-belt-2">
+					<div class="adma google-publisher" data-device="Desktop" data-width="620">
+				
+<div class="pmc-adm-goog-pub-div ad-text">
+	<div id="div-gpt-gd-news-620x251-uid6" class="ad-rotatable adw-620 adh-251"></div>
+	</div>
+			</div>
+				</div>
+			</div>
+			
+		<div id="article-river">
+			<header class="header">
+				<h4 class="page-title">More News from GoldDerby</h4>
+			</header>
+			<div class="article-river">
+				<div data-post-id="1202692301" class="goldderby-lazy-load-posts">
+					<img src="https://www.goldderby.com/wp-content/themes/vip/pmc-goldderby/assets/images/loading.gif" alt="Loading" class="loading" />
+				</div>
+			</div>
+		</div>
+
+		</main><!-- #main -->
+		
+<aside id="sidebar" class="site-sidebar" role="complementary">
+		<div class="admz" id="adm-widget-news-dt-tab-300x600">
+					<div class="adma google-publisher" data-device="Desktop" data-width="300">
+				
+<div class="pmc-adm-goog-pub-div ad-text">
+	<div id="div-gpt-gd-news-300x600-uid7" class="ad-rotatable adw-300 adh-600"></div>
+	</div>
+			</div>
+				</div>
+<section id="text-11" class="widget widget_text"><h3 class="widget-title">Ultimate Awards Analysis</h3>			<div class="textwidget"><p><a href="https://www.goldderby.com/inside-track/"><img class="aligncenter" src="https://www.goldderby.com/wp-content/uploads/2018/08/Tom-ONeil-Inside-Track.jpg" /><br />
+</a><a href="https://www.goldderby.com/inside-track/"><strong>TOM O&#8217;NEIL&#8217;S INSIDE TRACK: See latest articles, videos and predictions by Gold Derby&#8217;s Editor &amp; Founder</strong></a></p>
+<div style="height: 20px;"></div>
+<p><strong>READ: </strong><a href="https://www.goldderby.com/article/2018/golden-globe-predictions-news-396150428/">Tom O&#8217;Neil reveals his &#8220;100% accurate, can&#8217;t-be-wrong, don&#8217;t-argue-with-me Golden Globe predictions&#8221;!</a></p>
+<div style="height: 20px;"></div>
+<p><a href="https://www.goldderby.com/video/playlist/inside-track-video/"><img class="aligncenter" src="https://www.goldderby.com/wp-content/uploads/2018/11/4-Experts.jpg" /></a></p>
+<div style="height: 20px;"></div>
+<div><strong>WATCH:</strong> <a href="https://www.goldderby.com/video/playlist/inside-track-video/">Oscar predictions smackdowns with Experts Claudia Puig, Alicia Malone, Scott Mantz, Keith Simanton, Anne Thompson, Glenn Whipp, Joyce Eng, Susan Wloszczyna, Pete Hammond &amp; Tom O&#8217;Neil [Videos &amp; Audio Podcasts]</a></div>
+<div style="height: 20px;"></div>
+<p><a href="https://www.goldderby.com/video/playlist/editors-oscar-predictions-2018/"><img class="aligncenter" src="https://www.goldderby.com/wp-content/uploads/2018/10/a-star-is-born-green-book.jpg" /></a></p>
+<div style="height: 20px;"></div>
+<div><strong>WATCH:</strong> <a href="https://www.goldderby.com/video/playlist/editors-oscar-predictions-2018/">See Oscar predictions slugfests: Gold Derby Editors track the top categories </a></div>
+</div>
+		</section><section id="pmc_related_articles_widget-3" class="widget widget_pmc_related_articles_widget no-margin-bottom"><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/the-handmaids-tale-cast-sag-awards-this-is-us-news/" title="&#8216;The Handmaid&#8217;s Tale&#8217; cast seeks revenge at 2019 SAG Awards after losing to &#8216;This Is Us&#8217;">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/the-handmaids-tale-cast.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="the-handmaids-tale-cast" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/the-handmaids-tale-cast-sag-awards-this-is-us-news/" title="&#039;The Handmaid&#039;s Tale&#039; cast seeks revenge at 2019 SAG Awards after losing to &#039;This Is Us&#039;" class="post" rel="">&#039;The Handmaid&#039;s Tale&#039; cast seeks revenge at 2019 SAG Awards after losing to &#039;This Is Us&#039&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/jamie-foxx-greatest-films-ranked-worst-to-best-ray-collateral-django-unchained-news/" title="Jamie Foxx movies: 10 greatest films, ranked worst to best, include &#8216;Ray,&#8217; &#8216;Collateral,&#8217; &#8216;Django Unchained&#8217;">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/Jamie-Foxx.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail" alt="Jamie-Foxx-Movies-Ranked" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/jamie-foxx-greatest-films-ranked-worst-to-best-ray-collateral-django-unchained-news/" title="Jamie Foxx movies: 10 greatest films, ranked worst to best, include &#039;Ray,&#039; &#039;Collateral,&#039; &#039;Django Unchained&#039;" class="post" rel="">Jamie Foxx movies: 10 greatest films, ranked worst to best, include &#039;Ray,&#039; &#039;Collateral,&#039; &#039;Django&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/2019-oscars-calendar-pga-awards-voting-news/" title="2019 Oscars calendar: PGA Awards voting opens on Dec. 13">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/01/pga-awards.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="pga awards" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/2019-oscars-calendar-pga-awards-voting-news/" title="2019 Oscars calendar: PGA Awards voting opens on Dec. 13" class="post" rel="">2019 Oscars calendar: PGA Awards voting opens on Dec. 13</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/sag-awards-tv-nominees-surprises-julia-garner-john-krasinski-news-842057139/" title="18 SAG Awards TV nominees we didn&#8217;t see coming: Julia Garner, John Krasinski, Penelope Cruz and more">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/julia-garner-john-krasinski-penelope-cruz.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Julia Garner, John Krasinski and Penelope Cruz" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/sag-awards-tv-nominees-surprises-julia-garner-john-krasinski-news-842057139/" title="18 SAG Awards TV nominees we didn&#039;t see coming: Julia Garner, John Krasinski, Penelope Cruz and more" class="post" rel="">18 SAG Awards TV nominees we didn&#039;t see coming: Julia Garner, John Krasinski, Penelope Cruz and more</a>
+</div></section>	<div class="admz" id="adm-widget-news-dt-tab-300x250">
+					<div class="adma google-publisher" data-device="Desktop" data-width="300">
+				
+<div class="pmc-adm-goog-pub-div ad-text">
+	<div id="div-gpt-gd-news-300x250-uid8" class="ad-rotatable adw-300 adh-250"></div>
+	</div>
+			</div>
+				</div>
+<section id="text-6" class="widget widget_text"><h3 class="widget-title">Exclusive Oscar Contender Talks</h3>			<div class="textwidget"><p><a href="https://www.goldderby.com/video/playlist/2019-oscar-contenders/"><img class="aligncenter" src="https://www.goldderby.com/wp-content/uploads/2018/12/Constance-Wu-Adam-Driver-Oscars.jpg" /><br />
+</a><a href="https://www.goldderby.com/video/playlist/2018-emmy-awards-winners/"><strong>Watch our lively chats with 2019 Oscar and Golden Globe contenders Constance Wu (&#8220;Crazy Rich Asians&#8221;) and Adam Driver (&#8220;BlacKkKlansman&#8221;) plus over 50 more, including &#8230; </strong></a></p>
+<ul>
+<li><strong>Brad Bird</strong> (&#8220;Incredibles 2&#8221;)</li>
+<li><strong>Willem Dafoe</strong> (&#8220;At Eternity&#8217;s Gate&#8221;)</li>
+<li><strong>Joel Edgerton</strong> (&#8220;Boy Erased&#8221;)</li>
+<li><strong>Sam Elliott</strong> (&#8220;A Star Is Born&#8221;)</li>
+<li><strong>Rupert Everett</strong> (&#8220;The Happy Prince&#8221;)</li>
+<li><strong>Ben Foster</strong> (&#8220;Leave No Trace&#8221;)</li>
+<li><strong>Rupert Friend</strong> (&#8220;At Eternity&#8217;s Gate&#8221;)</li>
+<li><strong>Hugh Grant</strong> (&#8220;Paddington 2&#8221;)</li>
+<li><strong>Richard E. Grant</strong> (&#8220;Can You Ever Forgive Me?&#8221;)</li>
+<li><strong>Maggie Gyllenhaal</strong> (&#8220;The Kindergarten Teacher&#8221;)</li>
+<li><strong>Kathryn Hahn</strong> (&#8220;Private Life&#8221;)</li>
+<li><strong>Russell Hornsby</strong> (&#8220;The Hate U Give&#8221;)</li>
+<li><strong>Nicholas Hoult</strong> (&#8220;The Favourite&#8221;)</li>
+<li><strong>Zoe Kazan</strong> (&#8220;Wildlife&#8221;)</li>
+<li><strong>Nicole Kidman</strong> (&#8220;Destroyer,&#8221; &#8220;Boy Erased&#8221;)</li>
+<li><strong>John Krasinski</strong> (&#8220;A Quiet Place&#8221;)</li>
+<li><strong>Tim McGraw</strong> (&#8220;Free Solo&#8221;)</li>
+<li><strong>Lin-Manuel Miranda</strong> (&#8220;Mary Poppins Returns&#8221;)</li>
+<li><strong>Chloe Grace Moretz</strong> (&#8220;Miseducation of Cameron Post&#8221;)</li>
+<li><strong>Carey Mulligan</strong> (&#8220;Wildlife&#8221;)</li>
+<li><strong>Tim Blake Nelson</strong> (&#8220;Ballad of Buster Scruggs&#8221;)</li>
+<li><strong>Natalie Portman</strong> (&#8220;Vox Lux&#8221;)</li>
+<li><strong>Mark Ronson</strong> (&#8220;A Star Is Born&#8221;)</li>
+<li><strong>Maura Tierney</strong> (&#8220;Beautiful Boy&#8221;)</li>
+<li><strong>Alex Wolff</strong> (&#8220;Hereditary&#8221;)</li>
+<li><strong>Michelle Yeoh</strong> (&#8220;Crazy Rich Asians&#8221;)</li>
+</ul>
+<p><a href="https://www.goldderby.com/video/playlist/2019-oscar-contenders/">See more video interviews</a></p>
+</div>
+		</section><section id="text-9" class="widget widget_text"><h3 class="widget-title">Earliest-Ever Oscar Predictions</h3>			<div class="textwidget"><p><a href="https://www.goldderby.com/odds/user-odds/oscars-nominations-2019/"><img class="aligncenter" src="https://www.goldderby.com/wp-content/uploads/2018/02/Oscar-Best-Director-5.jpg" /><br />
+</a><a href="https://www.goldderby.com/odds/user-odds/oscars-nominations-2019/"><strong>See gutsy 2019 Oscar predictions by 4,000 Gold Derby Users</strong></a></p>
+<div style="height: 20px;"></div>
+<p>See latest rankings in top 6 categories: Best Picture, Director, Actor &amp; Actress, Supporting Actor &amp; Actress. <a href="https://www.goldderby.com/odds/user-odds/oscars-nominations-2019/">Click Here!</a></p>
+<div style="height: 20px;"></div>
+<p><a href="https://www.goldderby.com/awardshows/expert-predictions/oscars-nominations-2019/sort/recent/">See predictions by top Oscar Experts!</a></p>
+<div style="height: 20px;"></div>
+<p><a href="https://www.goldderby.com/leagues/">Make YOUR Oscar predictions here!</a></p>
+</div>
+		</section>
+		<div class="OUTBRAIN" data-src="https://www.goldderby.com/article/2018/2019-grammy-nominations-list-nominees-61st-grammys-news"
+			data-widget-id="SB_1"
+			data-ob-template="GoldDerby">
+		</div>
+
+		<section id="pmc_related_articles_widget-4" class="widget widget_pmc_related_articles_widget no-margin-bottom"><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/sag-awards-tv-nominees-surprises-julia-garner-john-krasinski-news-842057139/" title="18 SAG Awards TV nominees we didn&#8217;t see coming: Julia Garner, John Krasinski, Penelope Cruz and more">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/julia-garner-john-krasinski-penelope-cruz.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Julia Garner, John Krasinski and Penelope Cruz" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/sag-awards-tv-nominees-surprises-julia-garner-john-krasinski-news-842057139/" title="18 SAG Awards TV nominees we didn&#039;t see coming: Julia Garner, John Krasinski, Penelope Cruz and more" class="post" rel="">18 SAG Awards TV nominees we didn&#039;t see coming: Julia Garner, John Krasinski, Penelope Cruz and more</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/sag-awards-nominations-robin-wright-house-of-cards-news/" title="Will SAG Awards finally vote Robin Wright for &#8216;House of Cards&#8217; farewell season?">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2017/07/Robin-Wright-1.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Robin Wright on House of Cards" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/sag-awards-nominations-robin-wright-house-of-cards-news/" title="Will SAG Awards finally vote Robin Wright for &#039;House of Cards&#039; farewell season?" class="post" rel="">Will SAG Awards finally vote Robin Wright for &#039;House of Cards&#039; farewell season?</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/ashleigh-powell-the-nutcracker-and-the-four-realms-writer-video-interview-news/" title="&#8216;The Nutcracker and the Four Realms&#8217; writer on making the ballet more character-driven [RED CARPET VIDEO]">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/Nutcracker-Realms.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="&#039;The Nutcracker and the Four Realms&#039;" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/ashleigh-powell-the-nutcracker-and-the-four-realms-writer-video-interview-news/" title="&#039;The Nutcracker and the Four Realms&#039; writer on making the ballet more character-driven [RED CARPET VIDEO]" class="post" rel="">&#039;The Nutcracker and the Four Realms&#039; writer on making the ballet more character-driven [RED CARPET&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/megan-mullally-host-2019-sag-awards/" title="Megan Mullally will host the 2019 SAG Awards &#8212; watch her adorable announcement with Nick Offerman">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/megan.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Megan Mullally" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/megan-mullally-host-2019-sag-awards/" title="Megan Mullally will host the 2019 SAG Awards -- watch her adorable announcement with Nick Offerman" class="post" rel="">Megan Mullally will host the 2019 SAG Awards -- watch her adorable announcement with Nick Offerman</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/jan-sewell-bohemian-rhapsody-makeup-hairstyling-interview-rami-malek-news-826057913/" title="Jan Sewell (&#8216;Bohemian Rhapsody&#8217; makeup and hair) on capturing Freddie Mercury from the mustache to the teeth [EXCLUSIVE VIDEO INTERVIEW]">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/10/rami-malek-bohemian-rhapsody.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="rami-malek-bohemian-rhapsody" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/jan-sewell-bohemian-rhapsody-makeup-hairstyling-interview-rami-malek-news-826057913/" title="Jan Sewell (&#039;Bohemian Rhapsody&#039; makeup and hair) on capturing Freddie Mercury from the mustache to the teeth [EXCLUSIVE VIDEO INTERVIEW]" class="post" rel="">Jan Sewell (&#039;Bohemian Rhapsody&#039; makeup and hair) on capturing Freddie Mercury from the mustache to the&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/henry-golding-crazy-rich-asians-video-interview/" title="Henry Golding on the &#8216;avalanche of support&#8217; for &#8216;Crazy Rich Asians&#8217; and breaking ground as an Asian leading man [EXCLUSIVE VIDEO INTERVIEW]">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/henry.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Henry Golding" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/henry-golding-crazy-rich-asians-video-interview/" title="Henry Golding on the &#039;avalanche of support&#039; for &#039;Crazy Rich Asians&#039; and breaking ground as an Asian leading man [EXCLUSIVE VIDEO INTERVIEW]" class="post" rel="">Henry Golding on the &#039;avalanche of support&#039; for &#039;Crazy Rich Asians&#039; and breaking ground as an Asian&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/sag-awards-nominations-forum-reactions-regina-king-snub-bohemian-rhapsody/" title="2019 SAG Awards film nominations forum reactions: Regina King&#8217;s snub is &#8216;shock of the day,&#8217; and where the hell did &#8216;Bohemian Rhapsody&#8217; come from?">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/10/regina2.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Regina King, If Beale Street Could Talk" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/sag-awards-nominations-forum-reactions-regina-king-snub-bohemian-rhapsody/" title="2019 SAG Awards film nominations forum reactions: Regina King&#039;s snub is &#039;shock of the day,&#039; and where the hell did &#039;Bohemian Rhapsody&#039; come from?" class="post" rel="">2019 SAG Awards film nominations forum reactions: Regina King&#039;s snub is &#039;shock of the day,&#039; and where&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/sag-awards-tv-nominations-forum-reactions-ozark-kominsky-method-the-americans/" title="2019 SAG Awards TV nominations forum reactions: &#8216;What&#8217;s their obsession with &#8216;Ozark&#8217;?&#8217;">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/ozark.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Julia Garner and Jason Bateman, Ozark" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/sag-awards-tv-nominations-forum-reactions-ozark-kominsky-method-the-americans/" title="2019 SAG Awards TV nominations forum reactions: &#039;What&#039;s their obsession with &#039;Ozark&#039;?&#039;" class="post" rel="">2019 SAG Awards TV nominations forum reactions: &#039;What&#039;s their obsession with &#039;Ozark&#039;?&#039&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/ben-whishaw-emily-mortimer-mary-poppins-returns-interview-news-395726408/" title="Ben Whishaw and Emily Mortimer (&#8216;Mary Poppins Returns&#8217;): The magical nanny is an &#8216;antidote&#8217; for our troubled times [EXCLUSIVE VIDEO INTERVIEW]">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/Ben-Whishaw-Emily-Mortimer-Mary-Poppins-Returns.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Ben Whishaw Emily Mortimer Mary Poppins Returns" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/ben-whishaw-emily-mortimer-mary-poppins-returns-interview-news-395726408/" title="Ben Whishaw and Emily Mortimer (&#039;Mary Poppins Returns&#039;): The magical nanny is an &#039;antidote&#039; for our troubled times [EXCLUSIVE VIDEO INTERVIEW]" class="post" rel="">Ben Whishaw and Emily Mortimer (&#039;Mary Poppins Returns&#039;): The magical nanny is an &#039;antidote&#039; for our&hellip;</a>
+</div><div class="gd-related-article">		
+	<div class="post-thumbnail">		<a class="thumbnail-link" href="https://www.goldderby.com/article/2018/sag-awards-2019-nominations-surprises-margot-robbie-emily-blunt-news-084251397/" title="SAG Awards 2019 nominations surprises: We goofed by not predicting &#8216;Bohemian Rhapsody,&#8217; Margot Robbie, Emily Blunt &#8230;">
+			<img width="75" height="75" src="https://www.goldderby.com/wp-content/uploads/2018/12/bohemian-rhapsody-emily-blunt-margot-robbie.jpg?w=75&amp;h=75&amp;crop=1" class="attachment-widget-thumbnail size-widget-thumbnail wp-post-image" alt="Bohemian Rhapsody, Emily Blunt and Margot Robbie" />		</a>
+		</div>
+	<a href="https://www.goldderby.com/article/2018/sag-awards-2019-nominations-surprises-margot-robbie-emily-blunt-news-084251397/" title="SAG Awards 2019 nominations surprises: We goofed by not predicting &#039;Bohemian Rhapsody,&#039; Margot Robbie, Emily Blunt ..." class="post" rel="">SAG Awards 2019 nominations surprises: We goofed by not predicting &#039;Bohemian Rhapsody,&#039; Margot Robbie&hellip;</a>
+</div></section></aside><!-- #secondary -->
+	</div><!-- #primary -->
+
+			<div class="footer-ad">
+							</div>
+
+		</div><!-- #content -->
+
+		<div class="expert-newslater">
+			<div class="mail-info">
+				<img src="https://www.goldderby.com/wp-content/themes/vip/pmc-goldderby/assets/images/mail.png" alt=""><h3 class="news-text">Stay informed with our weekly Newsletter</h3>
+			</div>
+			<div class="n-form">
+				<form onsubmit="return false;" method="post">
+					<input type="email" placeholder="Email Address" name="email" id="newsletter_subs_email">
+					<input type="submit" value="Sign up" id="newsletter-subscription-button">
+				</form>
+			</div>
+		</div>
+		<div id="gd-newsletter-subscription-msg"></div>
+
+		       <footer id="footer" class="site-footer wrap" role="contentinfo">
+           <div id="other-pmc-properties">
+               <section class="footer-links"><ul><li><a href="/about-goldderby/" title="About Us" class="" rel="nofollow">About Us</a></li><li><a href="/advertise/" title="Advertise" class="" rel="nofollow">Advertise</a></li><li><a href="http://pages.email.goldderby.com/signup/" title="Newsletter" class="" rel="nofollow">Newsletter</a></li><li><a href="http://pmc.com/terms-of-use/" title="Terms of Use" class="" rel="nofollow">Terms of Use</a></li><li><a href="https://pmc.com/privacy-policy/" title="Privacy Policy" class="" rel="nofollow">Privacy Policy</a></li><li><a href="https://pmc.com/privacy-policy/#california" title="Your Privacy Rights" class="" rel="nofollow">Your Privacy Rights</a></li><li><a href="https://pmc.com/privacy-policy/#adchoices" title="Ad Choices" class="" rel="nofollow">Ad Choices</a></li><li><a href="#" title="Privacy Preferences" class="privacy-consent" rel="nofollow">Privacy Preferences</a></li><li><a href="/contact-us/" title="Contact Us" class="" rel="nofollow">Contact Us</a></li></ul></section><section class="pmc-links">
+	<h3>
+		<a href="http://www.pmc.com/" title="PMC Network" >
+			<span class="pmc-logo logos"></span>
+		</a>
+	</h3>
+	<nav>
+		<ul class="pmc-properties icon-pmc-logos">
+								<li class=" deadline-logo logos"><a title="Deadline" href="http://www.deadline.com/" >Deadline</a></li>
+										<li class=" variety-logo logos"><a title="variety.com" href="http://www.variety.com/" >variety.com</a></li>
+										<li class=" hollywoodlife-logo logos"><a title="Hollywoodlife" href="http://hollywoodlife.com/" >Hollywoodlife</a></li>
+										<li class=" indiewire-logo logos"><a title="IndieWire" href="http://www.indiewire.com" >IndieWire</a></li>
+										<li class=" tvline-logo logos"><a title="TV Line" href="http://tvline.com/" >TV Line</a></li>
+										<li class=" bgr-logo logos"><a title="BGR" href="http://bgr.com/" >BGR</a></li>
+										<li class=" wwd-logo logos"><a title="WWD" href="http://wwd.com/" >WWD</a></li>
+										<li class=" fn-logo logos"><a title="Footwearnews" href="http://footwearnews.com/" >Footwearnews</a></li>
+					
+		</ul>
+	</nav>
+</section>
+
+<p class="copyright">
+	<small>&copy; Copyright 2018 Gold Derby, a subsidiary of Penske Business Media, LLC.</small>
+</p>
+	<div class="OUTBRAIN" data-src="https://www.goldderby.com/article/2018/2019-grammy-nominations-list-nominees-61st-grammys-news/" data-widget-id="TR_1" data-ob-template="GoldDerby" ></div>
+	<script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
+	           </div><!-- closes wrap -->
+       </footer>
+    	</div><!-- #page -->
+
+			<div id="pmc-ad-bait" class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="width: 0 !important; height: 0 !important; position: fixed !important; left: -99999px !important;">ad</div>
+
+		<script>
+			if ( 'undefined' !== typeof jQuery ) {
+				var $pmc_ad_bait = jQuery('#pmc-ad-bait');
+				if ( $pmc_ad_bait.length ) {
+					if ( 'block' !== $pmc_ad_bait.css('display') ) {
+						window.pmc_is_adblocked = true;
+					}
+				}
+			}
+		</script>
+		<script type='text/javascript' class="script-mobile">
+pmc_adm_gpt.init({
+    "ad_targetings": {
+        "host": "goldderby.com",
+        "kw": [
+            "grammys",
+            "music",
+            "fyc",
+            "grammy-awards"
+        ],
+        "topic": [],
+        "featured-video": "no",
+        "content-video": "no"
+    },
+    "ad_list": {
+        "default": [
+            {
+                "targeting": {
+                    "pos": [
+                        "leaderboard",
+                        "atf",
+                        "top"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/leaderboard",
+                "id": "div-gpt-gd-news-728x90-uid4",
+                "width": [
+                    [
+                        970,
+                        250
+                    ],
+                    [
+                        728,
+                        90
+                    ],
+                    [
+                        970,
+                        66
+                    ],
+                    [
+                        970,
+                        90
+                    ],
+                    [
+                        970,
+                        300
+                    ],
+                    [
+                        1000,
+                        150
+                    ],
+                    [
+                        2,
+                        1
+                    ]
+                ],
+                "adunit-order": "1",
+                "bidders": {
+                    "bids": [
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "9527277"
+                            }
+                        },
+                        {
+                            "bidder": "rubicon",
+                            "params": {
+                                "accountId": "11714",
+                                "siteId": "74688",
+                                "zoneId": "703942"
+                            }
+                        },
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "435447"
+                            }
+                        },
+                        {
+                            "bidder": "triplelift",
+                            "params": {
+                                "inventoryCode": "goldderby_desktop_leaderboard_728x90"
+                            }
+                        },
+                        {
+                            "bidder": "sonobi",
+                            "params": {
+                                "ad_unit": "3782/GoldDerby/news/leaderboard"
+                            }
+                        }
+                    ],
+                    "code": "div-gpt-gd-news-728x90-uid4",
+                    "sizes": [
+                        [
+                            970,
+                            250
+                        ],
+                        [
+                            728,
+                            90
+                        ],
+                        [
+                            970,
+                            66
+                        ],
+                        [
+                            970,
+                            90
+                        ],
+                        [
+                            970,
+                            300
+                        ],
+                        [
+                            1000,
+                            150
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "mediaTypes": {
+                        "banner": {
+                            "sizes": [
+                                [
+                                    970,
+                                    250
+                                ],
+                                [
+                                    728,
+                                    90
+                                ],
+                                [
+                                    970,
+                                    66
+                                ],
+                                [
+                                    970,
+                                    90
+                                ],
+                                [
+                                    970,
+                                    300
+                                ],
+                                [
+                                    1000,
+                                    150
+                                ],
+                                [
+                                    2,
+                                    1
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "is_lazy_load": "no"
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "rail-bottom",
+                        "btf",
+                        "bottom"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/rail-bottom",
+                "id": "div-gpt-gd-news-300x250-uid8",
+                "width": [
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        300,
+                        251
+                    ]
+                ],
+                "adunit-order": "2",
+                "bidders": {
+                    "bids": [
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "9527279"
+                            }
+                        },
+                        {
+                            "bidder": "rubicon",
+                            "params": {
+                                "accountId": "11714",
+                                "siteId": "74688",
+                                "zoneId": "703946"
+                            }
+                        },
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "435446"
+                            }
+                        },
+                        {
+                            "bidder": "triplelift",
+                            "params": {
+                                "inventoryCode": "goldderby_desktop_rail-bottom_300x250"
+                            }
+                        },
+                        {
+                            "bidder": "sonobi",
+                            "params": {
+                                "ad_unit": "3782/GoldDerby/news/rail-bottom"
+                            }
+                        }
+                    ],
+                    "code": "div-gpt-gd-news-300x250-uid8",
+                    "sizes": [
+                        [
+                            300,
+                            250
+                        ],
+                        [
+                            300,
+                            251
+                        ]
+                    ],
+                    "mediaTypes": {
+                        "banner": {
+                            "sizes": [
+                                [
+                                    300,
+                                    250
+                                ],
+                                [
+                                    300,
+                                    251
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "is_lazy_load": "no"
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "skin"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/skin",
+                "id": "gpt-gd-ros-skin-uid3",
+                "adunit-order": "9",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "oop": true
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "mid",
+                        "mid-article1",
+                        "mid-articleX",
+                        "mid-article"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/mid-article",
+                "id": "gpt-news-mid-article-uid0",
+                "width": [
+                    [
+                        1,
+                        1
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        300,
+                        251
+                    ]
+                ],
+                "adunit-order": "10",
+                "bidders": {
+                    "bids": [
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "11935135",
+                                "video": {
+                                    "skippable": true,
+                                    "playback_method": [
+                                        "auto_play_sound_off"
+                                    ]
+                                },
+                                "reserve": 10
+                            }
+                        }
+                    ],
+                    "mediaTypes": {
+                        "video": {
+                            "context": "outstream"
+                        }
+                    },
+                    "code": "gpt-news-mid-article-uid0",
+                    "sizes": [
+                        [
+                            640,
+                            480
+                        ]
+                    ]
+                },
+                "is_lazy_load": "no"
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "top"
+                    ]
+                },
+                "slot": "3782/goldderby/news/interstitial",
+                "id": "gpt-dsk-tab-news-oop-int-uid1",
+                "adunit-order": 10,
+                "bidders": false,
+                "is_lazy_load": "no",
+                "oop": true
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "rail-top",
+                        "top",
+                        "atf"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/rail-top",
+                "id": "div-gpt-gd-news-300x600-uid7",
+                "width": [
+                    [
+                        300,
+                        600
+                    ],
+                    [
+                        300,
+                        1050
+                    ],
+                    [
+                        160,
+                        600
+                    ],
+                    [
+                        300,
+                        250
+                    ]
+                ],
+                "adunit-order": "10",
+                "bidders": {
+                    "bids": [
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "9527277"
+                            }
+                        },
+                        {
+                            "bidder": "rubicon",
+                            "params": {
+                                "accountId": "11714",
+                                "siteId": "74688",
+                                "zoneId": "703942"
+                            }
+                        },
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "435446"
+                            }
+                        },
+                        {
+                            "bidder": "triplelift",
+                            "params": {
+                                "inventoryCode": "goldderby_desktop_rail-top_300x250"
+                            }
+                        },
+                        {
+                            "bidder": "sonobi",
+                            "params": {
+                                "ad_unit": "3782/GoldDerby/news/rail-top"
+                            }
+                        }
+                    ],
+                    "code": "div-gpt-gd-news-300x600-uid7",
+                    "sizes": [
+                        [
+                            300,
+                            600
+                        ],
+                        [
+                            300,
+                            1050
+                        ],
+                        [
+                            160,
+                            600
+                        ],
+                        [
+                            300,
+                            250
+                        ]
+                    ],
+                    "mediaTypes": {
+                        "banner": {
+                            "sizes": [
+                                [
+                                    300,
+                                    600
+                                ],
+                                [
+                                    300,
+                                    1050
+                                ],
+                                [
+                                    160,
+                                    600
+                                ],
+                                [
+                                    300,
+                                    250
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "is_lazy_load": "no"
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "btf",
+                        "river-mid",
+                        "river",
+                        "mid"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/river-mid",
+                "id": "div-gpt-gd-news-620x250-uid5",
+                "width": [
+                    [
+                        620,
+                        250
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        500,
+                        280
+                    ]
+                ],
+                "adunit-order": "11",
+                "bidders": {
+                    "bids": [
+                        {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "9527279"
+                            }
+                        },
+                        {
+                            "bidder": "rubicon",
+                            "params": {
+                                "accountId": "11714",
+                                "siteId": "74688",
+                                "zoneId": "703946"
+                            }
+                        },
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "435446"
+                            }
+                        },
+                        {
+                            "bidder": "triplelift",
+                            "params": {
+                                "inventoryCode": "goldderby_desktop_btf_300x250"
+                            }
+                        },
+                        {
+                            "bidder": "sonobi",
+                            "params": {
+                                "ad_unit": "3782/GoldDerby/news/river-mid"
+                            }
+                        }
+                    ],
+                    "code": "div-gpt-gd-news-620x250-uid5",
+                    "sizes": [
+                        [
+                            620,
+                            250
+                        ],
+                        [
+                            300,
+                            250
+                        ],
+                        [
+                            500,
+                            280
+                        ]
+                    ],
+                    "mediaTypes": {
+                        "banner": {
+                            "sizes": [
+                                [
+                                    620,
+                                    250
+                                ],
+                                [
+                                    300,
+                                    250
+                                ],
+                                [
+                                    500,
+                                    280
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "is_lazy_load": "no"
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "BTF",
+                        "river-bottom",
+                        "river"
+                    ]
+                },
+                "slot": "3782/GoldDerby/news/river-bottom",
+                "id": "div-gpt-gd-news-620x251-uid6",
+                "width": [
+                    [
+                        620,
+                        251
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        500,
+                        280
+                    ]
+                ],
+                "adunit-order": "12",
+                "bidders": {
+                    "bids": [
+                        {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": "435446"
+                            }
+                        },
+                        {
+                            "bidder": "triplelift",
+                            "params": {
+                                "inventoryCode": "goldderby_desktop_btf_300x250"
+                            }
+                        },
+                        {
+                            "bidder": "sonobi",
+                            "params": {
+                                "ad_unit": "3782/GoldDerby/news/river-bottom"
+                            }
+                        }
+                    ],
+                    "code": "div-gpt-gd-news-620x251-uid6",
+                    "sizes": [
+                        [
+                            620,
+                            251
+                        ],
+                        [
+                            300,
+                            250
+                        ],
+                        [
+                            500,
+                            280
+                        ]
+                    ],
+                    "mediaTypes": {
+                        "banner": {
+                            "sizes": [
+                                [
+                                    620,
+                                    251
+                                ],
+                                [
+                                    300,
+                                    250
+                                ],
+                                [
+                                    500,
+                                    280
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "is_lazy_load": "no"
+            }
+        ],
+        "interrupt-ads": [
+            {
+                "targeting": [],
+                "slot": "3782/goldderby/interstitial",
+                "id": "gpt-gd-interstitial-uid2",
+                "width": [
+                    [
+                        970,
+                        600
+                    ]
+                ],
+                "adunit-order": "1",
+                "bidders": false,
+                "is_lazy_load": "no"
+            }
+        ]
+    },
+    "ad_vast_tags": []
+});
+</script>
+
+<script type="text/liquid" id="ac_article">
+	<div class="ac_title">{{ result | highlight: 'title' | unescape }}</div>
+	<div class="ac_sub">{{ result.published_at | date: "%h %d, %Y" }}</div>
+</script>
+
+<script type="text/liquid" id="ac_tag">
+	<div class="ac_title">
+		<a href="{{ result.url }}">{{ result.name }}</a>
+	</div>
+</script>
+<noscript><img src="https://s3.amazonaws.com/heartbeat.pmc.com/track?host=www.goldderby.com&#038;path=%2Farticle%2F2018%2F2019-grammy-nominations-list-nominees-61st-grammys-news%2F&#038;ct=article&#038;lob=goldderby&#038;loc=us&#038;env=desktop&#038;post_id=1202692301&#038;comment_count=2" border="0" width="0" height="0" style="z-index: 0; bottom: -1px; left: -1px; display: inline; position: fixed;" /></noscript><script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201850'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_ga_event_tracking = {"events":[{"selector":"li#make_predictions a","category":"personal-menu","label":"Make Predictions"},{"selector":"li#current_predictions a","category":"personal-menu","label":"Current Predictions"},{"selector":"li#past_predictions a","category":"personal-menu","label":"Past Predictions"},{"selector":"li#leaderboards a","category":"personal-menu","label":"Leaderboards"},{"selector":"li#view_profile a","category":"personal-menu","label":"View Profile"},{"selector":"li#messages a","category":"personal-menu","label":"Messages"},{"selector":"li#email_alerts a","category":"personal-menu","label":"Manage Email Alerts"},{"action":"inview","selector":"#main article header.entry-header h1.entry-title","category":"article-page","label":"headline-view","nonInteraction":true},{"action":"inview","selector":"#main article .entry-content .article-content p:first","category":"article-page","label":"top-post-view","nonInteraction":true},{"action":"inview","selector":"#main article .entry-content .article-content p:pmc-middle-child","category":"article-page","label":"mid-post-view","nonInteraction":true},{"action":"inview","selector":"#main article .entry-content .article-content p:last","category":"article-page","label":"bottom-post-view","nonInteraction":true},{"action":"inview","selector":"#footer","category":"article-page","label":"footer-view","nonInteraction":true},{"action":"content-consumed","selector":"#main article .entry-content .article-content p:pmc-middle-child","category":"article-page","label":"content-consumed","nonInteraction":true},{"action":"click","selector":".entry-content a[href*='http:\/\/www.goldderby.com\/forum\/music']","category":"inline_hyperlink","label":"1202692301_link1_https:\/\/www.goldderby.com\/forum\/music\/","nonInteraction":false},{"action":"click","selector":".entry-content a[href*='http:\/\/www.goldderby.com\/article\/2017\/2018-grammy-awards-how-are-nominees-and-winners-decided']","category":"inline_hyperlink","label":"1202692301_link2_http:\/\/www.goldderby.com\/article\/2017\/2018-grammy-awards-how-are-nominees-and-winners-decided\/","nonInteraction":false},{"action":"click","selector":".entry-content a[href*='http:\/\/www.goldderby.com\/article\/2018\/2018-grammys-full-list-of-winners-60th-grammy-awards']","category":"inline_hyperlink","label":"1202692301_link3_http:\/\/www.goldderby.com\/article\/2018\/2018-grammys-full-list-of-winners-60th-grammy-awards\/","nonInteraction":false},{"action":"click","selector":".entry-content a[href*='http:\/\/variety.com\/2018\/music\/news\/joni-mitchell-tribute-concert-birthday-1203023647']","category":"inline_hyperlink","label":"1202692301_link4_https:\/\/variety.com\/2018\/music\/news\/joni-mitchell-tribute-concert-birthday-1203023647\/","nonInteraction":false},{"action":"click","selector":".entry-content a[href*='http:\/\/pages.email.goldderby.com\/signup']","category":"inline_hyperlink","label":"1202692301_link5_http:\/\/pages.email.goldderby.com\/signup\/","nonInteraction":false}],"device":"[D]"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.goldderby.com/_static/??-eJyVkcsOgjAQRX/IUomgK+O3lDKSwXam9gHy91ZkgQkL2U3mce7NHTk6gaRNaiHIPkjN1gJF4cGZqbBIRR8OMi9pppgH0pnUIQXprBbrujPcKCPuiXREphk2qskxUgz/QvogDDZeecxuBqCW/bf/TOAnAa98HWZ6WRy3J3s8b8ktQKQBYZxlfjpr/Dq3RC34oNnDrtCYOwMiEQ75OsenSJkpop6ZMHw+Eb3SD6Ru4d7stayr6nw5VXXZvwE8s6eP'></script>
+<script type='text/javascript' src='https://s.swiftypecdn.com/cc/zjRx99SuNtvrsKbnrmjQ.js?ver=2.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SwiftypeConfigs = {"engine_key":"zjRx99SuNtvrsKbnrmjQ","redirect_to":"\/results","home_url":"https:\/\/www.goldderby.com\/","placeholder_image":"","image_size":"medium","sort_field":"published_at","specific_dates":"","sort_direction":"desc","autocomplete":{"tags":{"name":null},"articles":{"include":true,"name":"Content"}},"author_list":[],"date_filters":{"date_options:radio-options":{"title":"Date Filter","default_option":0},"0":"content_type_facet:checkbox-facet","topics_facet:checkbox-facet":{"limit":7,"allowed_items":[],"disallowed_items":[]},"tags_facet:checkbox-facet":{"limit":7,"allowed_items":[],"disallowed_items":[]},"author_facet:checkbox-facet":[]},"custom_facet_settings":[],"meta_tags":{"post_types":{"post":"Article","pmc-gallery":"Gallery","goldderby-video":"Video"},"show_content_type_meta_tag":true,"tags":["post_tag"],"topics":["category"],"custom_topics":[],"comment_count":true,"appeared_in_print":false},"trans":{"search":"Search","search_button":"Search","reference":"Relevance","pub_date_new":"Published Date (newest first)","pub_date_old":"Published Date (oldest first)","most_commented":"Most Commented","clear":"Clear","content_type":"Content Type","topics":"Topics","tags":"Tags","all":"All","twentyfour_hours":"Past 24 Hours","seven_days":"Past 7 Days","thirty_days":"Past 30 Days","twelve_months":"Past 12 Months","specific_dates":"Specific Dates"},"search_fields":{"page":["member_name^4","title^3","author^2"]},"q":"","from_str":"From:","to_str":"To:","refine_search_str":"Refine Search","author":"Author","appeared_in_print":"Appeared in Print?"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.goldderby.com/_static/??-eJylkk1SwzAMRi+E4ylJy4phwRE4gWMrRon808hOCaevKaXTGdjE7GyN3hvNJ8lTFDr4BD7JSNmiZxmdFvdvPuGQ1ghSMUNiObJ8u5Zeg4vBF5gbh74Z+UHWCX9K+iYUCP/wFWRAm2eVMPi/Zkvv4IDlgvGisIGMgblf7xxeLWi/BdthnjAKQj+JIejMYsCPCotpm6WtHJ8J9VTLAoFOj82QiWpwPWMsN7GdjDMY1F+Zi6jsrwvYbhAlhtJSIRqPGea1IfW5UlCmwmCN6PsyD7NIIdAtD/SasoFLT/mC68FcF/Xinnf7rjs8td1+N54BX+Nc8g=='></script>
+<script type='text/javascript' src='//widgets.outbrain.com/outbrain.js?ver=5.0.1'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201850.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.8.1',blog:'147861860',post:'1202692301',tz:'-8',srv:'www.goldderby.com'} ]);
+	_stq.push([ 'clickTrackerInit', '147861860', '1202692301' ]);
+</script>
+<!-- Begin Quantcast Tag, Part 2 -->
+<script type="text/javascript">
+	_qevents.push({
+		qacct:"p-3fYA_jjXdhqZ-"
+	});
+</script>
+
+<noscript>
+	<div style="display:none;">
+		<img src="//pixel.quantserve.com/pixel/p-3fYA_jjXdhqZ-.gif" border="0" height="1" width="1" alt="Quantcast"/>
+	</div>
+</noscript>
+<!-- End Quantcast Tag, Part 2 -->
+
+<!-- Begin comScore Tag -->
+<script type="text/javascript">
+	var _comscore = _comscore || []; _comscore.push(
+		{ c1: "2", c2: "6035310", c3: "", c4: "", c5: "", c6: "", c15: "" }
+	); (function()
+		{ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); }
+	)();
+</script>
+<!-- End comScore Tag -->
+
+<!-- Begin CrazyEgg Tag -->
+<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+		var b=document.getElementsByTagName("script")[0];
+		a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0011/4414.js?"+Math.floor(new Date().getTime()/3600000);
+		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- End CrazyEgg Tag -->
+
+<!-- START callback function for onhashchange(when the hash tag in the url gets updated) -->
+<script type="text/javascript">
+	function global_urlhashchanged() {
+				/**
+		* Track pageview
+		*/
+		// Build the current domain name
+		var tmp_td = document.domain.split('.');
+		var tracking_domain = tmp_td[tmp_td.length-2] + "." + tmp_td[tmp_td.length-1];
+
+		// Build the current image
+		var imgname = location.hash.replace('#','');
+		try {
+			ga( 'send', 'pageview', location.pathname + location.hash );
+		} catch(err) {}
+
+		// Track Comscore
+		try {
+			setTimeout(function(){ var url = "http" + (/^https:/.test(document.location.href) ? "s" : "") + "://beacon.scorecardresearch.com/scripts/beacon.dll" + "?c1=2&amp;c2=6035310&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c7=" + escape(document.location.href) + "&amp;c8=" + escape(document.title) + "&amp;c9=" + escape(document.referrer) + "&amp;c10=" + escape(screen.width+'x'+screen.height) + "&amp;rn=" + (new Date()).getTime(); var i = new Image(); i.src = url; }, 1);
+
+			COMSCORE.beacon({ c1: "2", c2: "6035310", c3: "", c4: "", c5: "", c6: "", c15: ""});
+		} catch(err) {}
+
+		// Track Quantcast
+		try {
+			_qevents.push([
+				{ qacct:"p-3fYA_jjXdhqZ-" }, // Gold Derby P-code
+				{ qacct:"p-31f3D02tYU8zY" } // PMC P-Code
+			]);
+		} catch(err) {}
+
+		/**
+		* Track pageview end
+		*/
+	}
+</script>
+
+<script src="//dc8xl0ndzn2cb.cloudfront.net/js/goldderbycom/v0/keywee.min.js" type="text/javascript" async></script>
+
+<!-- DO NOT REMOVE, comment for engineering, 4BAfe4nkpyAktm3S -->
+	<!-- #test commit  end-->
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c8454aa091","applicationID":"130950866","transactionName":"ZwYHYhBRC0JWURILX15MJFUWWQpfGEEPDFdcBg==","queueTime":0,"applicationTime":463,"atts":"S0EQFFhLGB0VU0RYS00e","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
